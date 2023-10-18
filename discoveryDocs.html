@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+    <link rel="icon" href="assets/images/logo.jpg">
+    <link rel="stylesheet" href="main.css"> 
+	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
+    <title>Discovery Docs</title>
+</head>
+
+
+<body>
+    <noscript>This page requires JavaScript be available and enabled to function properly</noscript>
+	
+	<div class="sidebar">
+		<span class="logoOrientation">
+			<img src="assets/images/logo.jpg", width="120" height="120">
+		</span><br></br>
+		<a href="home.html">Home</a> <br></br>
+		<a href="adminDocs.html">Administrative</a>
+		<a href="appealDocs.html">Appeals</a>
+		<a href="discoveryDocs.html">Discovery</a>
+		<a href="motionDocs.html">Motions</a>
+		<a href="serviceDocs.html">Service</a>
+		<a href="subpoenaDocs.html">Subpoenas</a> <br></br>
+		<a href="faqs.html">FAQs</a>
+		<a href="contact.html">Contact</a>
+	</div>
+	
+<div class="main">
+    <h1>Discovery Documents</h1>
+    
+    <label for="documentSelect">Select a document: </label>
+    <span class="inputBox">
+        <select id="id_docSelect", onchange="primaryChange(this);">
+            <option value="n/a" selected disabled hidden></option>
+                <option value="2601_req">26.01 request</option>
+                <option value="2601_res">26.01 response</option>
+                <option value="2603_req">26.03 request</option>
+                <option value="2603_res">26.03 response</option>
+                <option value="depoNotice">Deposition notice</option>
+                <option value="discReq">Discovery request (not implemented)</option>
+                <option value="discRes">Discovery response</option>
+                <option value="FOIA_req">FOIA request letter</option>
+        </select>
+    </span> <br>
+    
+    <span class="indentedInputs">
+        <label for="jurisdiction">Jurisdiction: </label>
+            <span class="inputBox">
+                <select name="jurisdiction", id="id_jurisdiction", onchange="primaryChange(this);">
+                    <option value="n/a" selected disabled hidden></option>
+                        <option value="state">State</option>
+                        <option value="federal">Federal</option>
+                </select>
+            </span>
+    </span> <br>
+    
+    </br><br>
+    
+    
+    
+    
+    
+    <!-- header inputs -->
+    <label for="filingCounty">Filing county:</label>
+    <span class="inputBox">
+        <select id="id_filingCounty">
+            <option value="n/a" selected disabled hidden></option>
+            <option value="Abbeville">Abbeville</option>
+            <option value="Aiken">Aiken</option>
+            <option value="Allendale">Allendale</option>
+            <option value="Anderson">Anderson</option>
+            <option value="Bamberg">Bamberg</option>
+            <option value="Barnwell">Barnwell</option>
+            <option value="Beaufort">Beaufort</option>
+            <option value="Berkeley">Berkeley</option>
+            <option value="Calhoun">Calhoun</option>
+            <option value="Charleston">Charleston</option>
+            <option value="Cherokee">Cherokee</option>
+            <option value="Chester">Chester</option>
+            <option value="Chesterfield">Chesterfield</option>
+            <option value="Clarendon">Clarendon</option>
+            <option value="Colleton">Colleton</option>
+            <option value="Darlington">Darlington</option>
+            <option value="Dillon">Dillon</option>
+            <option value="Dorchester">Dorchester</option>
+            <option value="Edgefield">Edgefield</option>
+            <option value="Fairfield">Fairfield</option>
+            <option value="Florence">Florence</option>
+            <option value="Georgetown">Georgetown</option>
+            <option value="Greenville">Greenville</option>
+            <option value="Greenwood">Greenwood</option>
+            <option value="Hampton">Hampton</option>
+            <option value="Horry">Horry</option>
+            <option value="Jasper">Jasper</option>
+            <option value="Kershaw">Kershaw</option>
+            <option value="Lancaster">Lancaster</option>
+            <option value="Laurens">Laurens</option>
+            <option value="Lee">Lee</option>
+            <option value="Lexington">Lexington</option>
+            <option value="Marion">Marion</option>
+            <option value="Marlboro">Marlboro</option>
+            <option value="McCormick">McCormick</option>
+            <option value="Newberry">Newberry</option>
+            <option value="Oconee">Oconee</option>
+            <option value="Orangeburg">Orangeburg</option>
+            <option value="Pickens">Pickens</option>
+            <option value="Richland">Richland</option>
+            <option value="Saluda">Saluda</option>
+            <option value="Spartanburg">Spartanburg</option>
+            <option value="Sumter">Sumter</option>
+            <option value="Union">Union</option>
+            <option value="Williamsburg">Williamsburg</option>
+            <option value="York">York</option>
+        </select>
+    </span> <br>
+
+    <label for="filingCourt">Filing court:</label>
+    <span class="inputBox">
+        <select name="filingCourt", id="id_filingCourt", disabled="disabled">
+            <option value="n/a" selected disabled hidden></option>				
+            <option value="In the Court of Common Pleas">In the Court of Common Pleas</option>
+            <option value="In the Court of General Sessions">In the Court of General Sessions</option>
+            <option value="In the Magistrates Court">In the Magistrates Court</option>					
+        </select>
+    </span> <br>
+    
+    <form id="frmCaseNumber">
+        Case number: <span class="inputBox"><input type="text", name="caseNumber", id="id_caseNumber"></span>
+    </form><br>
+    
+
+    <label for="plaintiffName">Plaintiff name(s): </label>
+    <span class="inputBox">
+        <input type="text", name="plaintiffName", id="id_plaintiffName">
+    </span><br>
+
+    <span class="indentedInputs">
+        <label for="plaintiffNumber">Is there more than 1 Plaintiff? </label>
+        <span class="inputBox">
+            <select id="id_plaintiffNumber", onchange="plaintiffNumberChange(this);">
+                <option value=0>No</option>
+                <option value=1>Yes</option>
+            </select>
+        </span> <br>
+    </span>
+
+    <span class="indentedInputs">
+        <label for="plaintiffSex">What is the sex of the Plaintiff? </label>
+        <span class="inputBox">
+            <select id="id_plaintiffSex", title="Only if there is 1 Plaintiff attached">
+                <option value="n/a" selected disabled hidden></option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+                <option value="nonbinary">Non-binary</option>
+            </select>
+        </span>
+    </span> <br>
+    
+    
+    
+    <label for="defendantName">Defendant name(s): </label>
+    <span class="inputBox">
+        <input type="text", name="defendantName", id="id_defendantName">
+    </span><br>
+
+    <span class="indentedInputs">
+        <label for="defendantNumber">Is there more than 1 Defendant? </label>
+        <span class="inputBox">
+            <select id="id_defendantNumber">
+                <option value=0>No</option>
+                <option value=1>Yes</option>
+            </select>
+        </span>
+    </span> <br></br>    
+    
+    
+    <div id="req_2601">	
+        <label for="attorneyFiling_2601req">Attorney filing:</label>
+            <span class="inputBox">
+                <select name="attorneyFiling_2601req", id="id_attorneyFiling_2601req">
+                    <option value="n/a" selected disabled hidden></option>				
+                    <option value="Joshua T. Hawkins">Joshua T. Hawkins</option>
+                    <option value="Helena L. Jedziniak">Helena L. Jedziniak</option>
+                    <option value="Ethan L. Jedziniak">Ethan L. Jedziniak</option>
+                </select>
+            </span> <br></br>
+    </div>
+    
+
+
+    
+    <div id="res_2601">
+        <label for="attorneyFiling_2601res">Attorney filing:</label>
+            <span class="inputBox">
+                <select name="attorneyFiling_2601res", id="id_attorneyFiling_2601res">
+                    <option value="n/a" selected disabled hidden></option>				
+                    <option value="Joshua T. Hawkins">Joshua T. Hawkins</option>
+                    <option value="Helena L. Jedziniak">Helena L. Jedziniak</option>
+                    <option value="Ethan L. Jedziniak">Ethan L. Jedziniak</option>
+                </select>
+            </span> <br></br>
+
+        <label for="respInterrA_2601"><i><b>(A):</b> State the full name, address and telephone number of all persons or legal entities 
+            who may have a subrogation interest in each claim and state the basis and extent of said interest.</i></label><br>
+        <span class="indentedInputs">
+            <label for="respInterrA_2601">Response to Interrogatory A:</label>
+                <span class="inputBox">
+                    <select name="respInterrA_2601", id="id_respInterrA_2601">
+                        <option value="blank">(blank)</option>
+                        <option value="resp1">None known at this time.</option>
+                    </select>
+                </span>
+        </span> <br></br>
+
+        <label for="respInterrB_2601"><b><i>(B):</b> As to each claim, state whether it should be tried jury or nonjury and why.</i></label><br>
+        <span class="indentedInputs">
+            <label for="respInterrB_2601">Response to Interrogatory B:</label>
+                <span class="inputBox">
+                    <select name="respInterrB_2601", id="id_respInterrB_2601", style="width:400px;", style="text-overflow:ellipsis;">
+                        <option value="blank">(blank)</option>
+                        <option value="resp1">The Plaintiff requests a jury trial.</option>
+                        <option value="resp2">The Plaintiff requested a jury trial in state court before this action was removed
+                            in violation of 28 U.S.C. § 1446.</option>
+                    </select>
+                </span>
+        </span> <br></br>
+
+        <label for="respInterrC_2601"><b><i>(C):</b> State whether the party submitting these responses is a publicly owned company 
+            and separately identify. (1) each publicly owned company of which it is a parent, subsidiary, partner, or 
+            affiliate; (2) each publicly owned company which owns ten percent or more of the outstanding shares or 
+            other indicia of ownership of the party; and (3) each publicly owned company in which the party owns 
+            ten percent or more of the outstanding shares.</i></label><br>
+        <span class="indentedInputs">
+            <label for="respInterrC_2601">Response to Interrogatory C:</label>
+                <span class="inputBox">
+                    <select name="respInterrC_2601", id="id_respInterrC_2601">
+                        <option value="blank">(blank)</option>
+                        <option value="resp1">The Plaintiff is not a publicly owned company.</option>
+                    </select>
+                </span>
+        </span> <br></br>
+
+        <label for="respInterrD_2601"><b><i>(D):</b> State the basis for asserting the claim in the division in which it is filed (or 
+            the basis of any challenge to the appropriateness of the division).</i></label><br>
+        <span class="indentedInputs">
+            <label for="respInterrD_2601">Response to Interrogatory D:</label>
+                <span class="inputBox">
+                    <select name="respInterrD_2601", id="id_respInterrD_2601", style="width:400px;", style="text-overflow:ellipsis;">
+                        <option value="blank">(blank)</option>
+                        <option value="resp1">The Plaintiff filed this action in federal court because there is complete diversity 
+                            among the parties and because there is a federal question related to this action.</option>
+                        <option value="resp2">The Plaintiff filed this action in state court because there is not complete diversity 
+                            among the parties and because there is no federal question related to this action. The Defendants 
+                            removed this action in violation of 28 U.S.C. § 1446.</option>
+                        <option value="resp3">The Defendants removed this action to Federal Court.</option>
+                    </select>
+                </span>
+        </span> <br></br>
+
+        <label for="respInterrE_2601"><b><i>(E):</b> Is this action related in whole or in party to any other matter filed in this district, 
+            whether civil or criminal? If so, provide: (1) a short caption and the full case number of the related action; 
+            (2) an explanation of how the matters are related; and (3) a statement of the status of the related action. 
+            Counsel should disclose any cases which may be related regardless of whether they are still pending. Whether cases 
+            are related such that they should be assigned to a single judge will be determined by the Clerk of Court based on 
+            a determination of whether the cases: arise from the same or identical transactions, happenings or events; involve 
+            the identical parties or property; or for any other reason would entail substantial duplication of labor if heard 
+            by different judges.</i></label><br>
+        <span class="indentedInputs">
+            <label for="respInterrE_2601">Response to Interrogatory E:</label>
+                <span class="inputBox">
+                    <select name="respInterrE_2601", id="id_respInterrE_2601">
+                        <option value="blank">(blank)</option>
+                        <option value="resp1">This matter is not related to any other action filed in this District.</option>
+                    </select>
+                </span>
+        </span> <br></br>
+
+        <label for="respInterrF_2601"><b><i>(F):</b> If the defendant is improperly identified, give the proper identification and state whether 
+            counsel will accept service of an amended summons and pleading reflecting the correct identification.</i></label><br>
+        <span class="indentedInputs">
+            <label for="respInterrF_2601">Response to Interrogatory F:</label>
+                <span class="inputBox">
+                    <select name="respInterrF_2601", id="id_respInterrF_2601">
+                        <option value="blank">(blank)</option>
+                        <option value="resp1">N/a</option>
+                    </select>
+                </span>
+        </span> <br></br>
+
+        <label for="respInterrG_2601"><b><i>(G):</b> If you contend that some other person or legal entity is, in whole or in part, liable to 
+            you or the party asserting a claim against you in this matter, identify such person or entity and describe the 
+            basis of said liability.</i></label><br>
+        <span class="indentedInputs">
+            <label for="respInterrG_2601">Response to Interrogatory G:</label>
+                <span class="inputBox">
+                    <select name="respInterrG_2601", id="id_respInterrG_2601", style="width:400px;", style="text-overflow:ellipsis;">
+                        <option value="blank">(blank)</option>
+                        <option value="resp1">The plaintiff is not aware of any other liable legal entity at this time.  The 
+                            plaintiff reserves the right to amend this response and to name other individuals or entities in 
+                            an amended complaint, if necessary.</option>
+                    </select>
+                </span>
+        </span> <br></br>
+    </div>
+    
+    
+
+    <div id="req_2603">
+        <label for="attorneyFiling_2603req">Attorney filing:</label>
+            <span class="inputBox">
+                <select name="attorneyFiling_2603req", id="id_attorneyFiling_2603req">
+                    <option value="n/a" selected disabled hidden></option>				
+                    <option value="Joshua T. Hawkins">Joshua T. Hawkins</option>
+                    <option value="Helena L. Jedziniak">Helena L. Jedziniak</option>
+                </select>
+            </span> <br></br>
+    </div>
+    
+    
+    <div id="res_2603">	
+        <label for="attorneyFiling_2603res">Attorney filing:</label>
+        <span class="inputBox">
+            <select name="attorneyFiling_2603res", id="id_attorneyFiling_2603res">
+                <option value="n/a" selected disabled hidden></option>				
+                <option value="Joshua T. Hawkins">Joshua T. Hawkins</option>
+                <option value="Helena L. Jedziniak">Helena L. Jedziniak</option>
+                <option value="Ethan L. Jedziniak">Ethan L. Jedziniak</option>
+            </select>
+        </span> <br></br>
+
+        <label for="respInterr1_2603"><i><b>I.</b>	A short statement of the facts of the case.</i></label><br>
+        <span class="indentedInputs">
+            <label for="respInterr1_2603">Response to Interrogatory I:</label>
+                <span class="inputBox">
+                    <select name="respInterr1_2603", id="id_respInterr1_2603">
+                        <option value="blank">(blank)</option>
+                    </select>
+                </span>
+        </span> <br></br>
+
+        <label for="respInterr2_2603"><i><b>II.</b>	The names of fact witnesses likely to be called by the party and a 
+            brief summary of their expected testimony.</i></label><br>
+        <span class="indentedInputs">
+            <label for="respInterr2_2603">Response to Interrogatory II:</label>
+                <span class="inputBox">
+                    <select name="respInterr2_2603", id="id_respInterr2_2603">
+                        <option value="blank">(blank)</option>
+                    </select>
+                </span>
+        </span> <br></br>
+
+        <label for="respInterr3_2603"><i><b>III.</b>	The names and subject matter of expert witnesses (if no witnesses 
+            have been identified, the subject matter and field of expertise should be given as to experts likely to be 
+            offered).</i></label><br>
+        <span class="indentedInputs">
+            <label for="respInterr3_2603">Response to Interrogatory III:</label>
+                <span class="inputBox">
+                    <select name="respInterr3_2603", id="id_respInterr3_2603">
+                        <option value="blank">(blank)</option>
+                        <option value="resp1">The Plaintiff has not retained an expert to testify at this time.</option>
+                    </select>
+                </span>
+        </span> <br></br>
+
+        <label for="respInterr4_2603"><i><b>IV.</b>	A summary of the claims or defenses with statutory and/or case citations 
+            supporting the same.</i></label><br>
+        <span class="indentedInputs">
+            <label for="respInterr4_2603">Response to Interrogatory IV:</label>
+                <span class="inputBox">
+                    <select name="respInterr4_2603", id="id_respInterr4_2603">
+                        <option value="blank">(blank)</option>
+                    </select>
+                </span>
+        </span> <br></br>
+
+        <label for="respInterr5_2603"><i><b>V.</b>	Absent specific instructions from the assigned judge, the parties shall 
+            propose dates for the following deadlines in Local Civil Rule 16.02:<br/>
+            a.	Exchange of Fed. R. Civ. P. 26(a)(2) expert disclosures, and<br/>
+            b.	Completion of discovery.
+            </i></label><br>
+        <span class="indentedInputs">
+            <label for="respInterr5_2603">Response to Interrogatory V:</label>
+                <span class="inputBox">
+                    <select name="respInterr5_2603", id="id_respInterr5_2603", style="width:400px;", style="text-overflow:ellipsis;">
+                        <option value="blank">(blank)</option>
+                        <option value="resp1">There are no special instructions from the assigned judge at this time.  The court 
+                            has not yet issued a scheduled order.  The Plaintiff will comply with the deadlines set forth in 
+                            that scheduling order.</option>                        
+                    </select>
+                </span>
+        </span> <br></br>
+
+        <label for="respInterr6_2603"><i><b>VI.</b>	The parties shall inform the court whether there are any special 
+            circumstances that would affect the time frames applied in preparing the scheduling order. See generally 
+            Local Civil Rule 16.02(c) (Consent of Scheduling Order).</i></label><br>
+        <span class="indentedInputs">
+            <label for="respInterr6_2603">Response to Interrogatory VI:</label>
+                <span class="inputBox">
+                    <select name="respInterr6_2603", id="id_respInterr6_2603">
+                        <option value="blank">(blank)</option>
+                        <option value="resp1">None at this time.</option>
+                    </select>
+                </span>
+        </span> <br></br>
+
+        <label for="respInterr7_2603"><i><b>VII.</b>	The parties shall provide any additional information requested 
+            in the Pre-Scheduling Order (Local Civil Rule 16.01) or otherwise requested by the assigned judge.</i></label><br>
+        <span class="indentedInputs">
+            <label for="respInterr7_2603">Response to Interrogatory VII:</label>
+                <span class="inputBox">
+                    <select name="respInterr7_2603", id="id_respInterr7_2603", style="width:400px;", style="text-overflow:ellipsis;">
+                        <option value="blank">(blank)</option>
+                        <option value="resp1">None at this time.  The Plaintiff will provide any additional information 
+                            required by the Court.</option>
+                    </select>
+                </span>
+        </span> <br></br>
+    </div>
+        
+    
+    <div id="depoNotice">
+        <label for="attorneyFiling_depoNotice">Attorney filing:</label>
+        <span class="inputBox">
+            <select name="attorneyFiling_depoNotice", id="id_attorneyFiling_depoNotice">
+                <option value="n/a" selected disabled hidden></option>				
+                <option value="Joshua T. Hawkins">Joshua T. Hawkins</option>
+                <option value="Helena L. Jedziniak">Helena L. Jedziniak</option>
+                <option value="Ethan L. Jedziniak">Ethan L. Jedziniak</option>
+            </select>
+        </span> <br>
+
+        <label for="filingDate_depoNotice">Filing date:</label>
+        <span class="inputBox">
+            <input type="date-local", placeholder="mm/dd/yyyy", name="filingDate_depoNotice", id="id_filingDate_depoNotice", size="6">
+        </span> <br></br>
+
+        <form id="frmDepoLocation">
+            Name of building the depositions are taking place:<span class="inputBox"><input type="text", name="buildingName", id="id_buildingName"></span><br>
+            <span class="indentedInputs">Building address line 1:<span class="inputBox"><input type="text", name="buildingAddress1", id="id_buildingAddress1"></span></span><br>
+            <span class="indentedInputs">Building address line 2:<span class="inputBox"><input type="text", name="buildingAddress2", id="id_buildingAddress2"></span></span><br>
+            <span class="indentedInputs">Building address line 3:<span class="inputBox"><input type="text", name="buildingAddress3", id="id_buildingAddress3"></span></span><br>
+        </form><br>
+    
+        <label for="numIndivDepo">Number of individuals being deposed at location</label>
+        <span class="inputBox">
+            <select id="id_numIndivDepo", onchange="depoNumberChange()">
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+                <option value=5>5</option>
+                <option value=6>6</option>
+                <option value=7>7</option>
+                <option value=8>8</option>
+                <option value=9>9</option>
+                <option value=10>10</option>
+            </select>
+        </span> <br>
+
+        <form id="frmDepoLocation">
+            <span class="indentedInputs">
+                Name of Deponent 1:<span class="inputBox"><input type="text", name="depo1_name", id="id_depo1_name"></span><br>
+                <span class="indentedInputsTwo">Date of Deponent 1's deposition:<span class="inputBox"><input type="date-local", name="depo1_date", id="id_depo1_date", size="6", placeholder="mm/dd/yyyy"></span></span><br>
+                <span class="indentedInputsTwo">Time of Deponent 1's deposition:<span class="inputBox"><input type="time-local", name="depo1_time", id="id_depo1_time", maxlength="5", size="2", placeholder="00:00">
+                    <select name="depo1_AMPM", id="id_depo1_AMPM">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select></span>
+                </span>
+            </span><br>
+                
+            <span id="deponent2"><span class="indentedInputs">
+                Name of Deponent 2:<span class="inputBox"><input type="text", name="depo2_name", id="id_depo2_name"></span><br>
+                <span class="indentedInputsTwo">Date of Deponent 2's deposition:<span class="inputBox"><input type="date-local", name="depo2_date", id="id_depo2_date", size="6", placeholder="mm/dd/yyyy"></span></span><br>
+                <span class="indentedInputsTwo">Time of Deponent 2's deposition:<span class="inputBox"><input type="time-local", name="depo2_time", id="id_depo2_time", maxlength="5", size="2", placeholder="00:00">
+                    <select name="depo2_AMPM", id="id_depo2_AMPM">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select></span>
+                </span>
+            </span><br></span>
+
+            <span id="deponent3"><span class="indentedInputs">
+                Name of Deponent 3:<span class="inputBox"><input type="text", name="depo3_name", id="id_depo3_name"></span><br>
+                <span class="indentedInputsTwo">Date of Deponent 3's deposition:<span class="inputBox"><input type="date-local", name="depo3_date", id="id_depo3_date", size="6", placeholder="mm/dd/yyyy"></span></span><br>
+                <span class="indentedInputsTwo">Time of Deponent 3's deposition:<span class="inputBox"><input type="time-local", name="depo3_time", id="id_depo3_time", maxlength="5", size="2", placeholder="00:00">
+                    <select name="depo3_AMPM", id="id_depo3_AMPM">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select></span>
+                </span>
+            </span><br></span>
+    
+            <span id="deponent4"><span class="indentedInputs">
+                Name of Deponent 4:<span class="inputBox"><input type="text", name="depo4_name", id="id_depo4_name"></span><br>
+                <span class="indentedInputsTwo">Date of Deponent 4's deposition:<span class="inputBox"><input type="date-local", name="depo4_date", id="id_depo4_date", size="6", placeholder="mm/dd/yyyy"></span></span><br>
+                <span class="indentedInputsTwo">Time of Deponent 4's deposition:<span class="inputBox"><input type="time-local", name="depo4_time", id="id_depo4_time", maxlength="5", size="2", placeholder="00:00">
+                    <select name="depo4_AMPM", id="id_depo4_AMPM">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select></span>
+                </span>
+            </span><br></span>
+
+            <span id="deponent5"><span class="indentedInputs">
+                Name of Deponent 5:<span class="inputBox"><input type="text", name="depo5_name", id="id_depo5_name"></span><br>
+                <span class="indentedInputsTwo">Date of Deponent 5's deposition:<span class="inputBox"><input type="date-local", name="depo5_date", id="id_depo5_date", size="6", placeholder="mm/dd/yyyy"></span></span><br>
+                <span class="indentedInputsTwo">Time of Deponent 5's deposition:<span class="inputBox"><input type="time-local", name="depo5_time", id="id_depo5_time", maxlength="5", size="2", placeholder="00:00">
+                    <select name="depo5_AMPM", id="id_depo5_AMPM">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select></span>
+                </span>
+            </span><br></span>
+
+            <span id="deponent6"><span class="indentedInputs">
+                Name of Deponent 6:<span class="inputBox"><input type="text", name="depo6_name", id="id_depo6_name"></span><br>
+                <span class="indentedInputsTwo">Date of Deponent 6's deposition:<span class="inputBox"><input type="date-local", name="depo6_date", id="id_depo6_date", size="6", placeholder="mm/dd/yyyy"></span></span><br>
+                <span class="indentedInputsTwo">Time of Deponent 6's deposition:<span class="inputBox"><input type="time-local", name="depo6_time", id="id_depo6_time", maxlength="5", size="2", placeholder="00:00">
+                    <select name="depo6_AMPM", id="id_depo6_AMPM">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select></span>
+                </span>
+            </span><br></span>
+
+            <span id="deponent7"><span class="indentedInputs">
+                Name of Deponent 7:<span class="inputBox"><input type="text", name="depo7_name", id="id_depo7_name"></span><br>
+                <span class="indentedInputsTwo">Date of Deponent 7's deposition:<span class="inputBox"><input type="date-local", name="depo7_date", id="id_depo7_date", size="6", placeholder="mm/dd/yyyy"></span></span><br>
+                <span class="indentedInputsTwo">Time of Deponent 7's deposition:<span class="inputBox"><input type="time-local", name="depo7_time", id="id_depo7_time", maxlength="5", size="2", placeholder="00:00">
+                    <select name="depo7_AMPM", id="id_depo7_AMPM">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select></span>
+                </span>
+            </span><br></span>
+
+            <span id="deponent8"><span class="indentedInputs">
+                Name of Deponent 8:<span class="inputBox"><input type="text", name="depo8_name", id="id_depo8_name"></span><br>
+                <span class="indentedInputsTwo">Date of Deponent 8's deposition:<span class="inputBox"><input type="date-local", name="depo8_date", id="id_depo8_date", size="6", placeholder="mm/dd/yyyy"></span></span><br>
+                <span class="indentedInputsTwo">Time of Deponent 8's deposition:<span class="inputBox"><input type="time-local", name="depo8_time", id="id_depo8_time", maxlength="5", size="2", placeholder="00:00">
+                    <select name="depo8_AMPM", id="id_depo8_AMPM">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select></span>
+                </span>
+            </span><br></span>
+
+            <span id="deponent9"><span class="indentedInputs">
+                Name of Deponent 9:<span class="inputBox"><input type="text", name="depo9_name", id="id_depo9_name"></span><br>
+                <span class="indentedInputsTwo">Date of Deponent 9's deposition:<span class="inputBox"><input type="date-local", name="depo9_date", id="id_depo9_date", size="6", placeholder="mm/dd/yyyy"></span></span><br>
+                <span class="indentedInputsTwo">Time of Deponent 9's deposition:<span class="inputBox"><input type="time-local", name="depo9_time", id="id_depo9_time", maxlength="5", size="2", placeholder="00:00">
+                    <select name="depo9_AMPM", id="id_depo9_AMPM">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select></span>
+                </span>
+            </span><br></span>
+
+            <span id="deponent10"><span class="indentedInputs">
+                Name of Deponent 10:<span class="inputBox"><input type="text", name="depo10_name", id="id_depo10_name"></span><br>
+                <span class="indentedInputsTwo">Date of Deponent 10's deposition:<span class="inputBox"><input type="date-local", name="depo10_date", id="id_depo10_date", size="6", placeholder="mm/dd/yyyy"></span></span><br>
+                <span class="indentedInputsTwo">Time of Deponent 10's deposition:<span class="inputBox"><input type="time-local", name="depo10_time", id="id_depo10_time", maxlength="5", size="2", placeholder="00:00">
+                    <select name="depo10_AMPM", id="id_depo10_AMPM">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select></span>
+                </span>
+            </span><br></span>
+        </span></form><br>
+    </div>
+    
+    
+    <div id="discReq">
+    </div>
+    
+    
+    <div id="discRes">
+        <label for="discRespName">The Discovery response is addressed to:</label>
+        <span class="inputBox"><input type="text", name="discRespName", id="id_discRespName"></span><br>
+
+        <label for="numSetInterr_resp">Number set of Interrogatories</label>
+        <span class="inputBox">
+            <select id="id_numSetInterr_resp">
+                <option value="n/a" selected disabled hidden></option>
+                <option value="First">First</option>
+                <option value="Second">Second</option>
+                <option value="Third">Third</option>
+                <option value="Fourth">Fourth</option>
+                <option value="Fifth">Fifth</option>
+                <option value="Sixth">Sixth</option>
+                <option value="Seventh">Seventh</option>
+                <option value="Eighth">Eighth</option>
+                <option value="Ninth">Ninth</option>
+                <option value="Tenth">Tenth</option>
+            </select>
+        </span> <br></br>    
+    </div>
+    
+    
+    <div id="FOIA_req">
+        <form id="frmCustodian">
+                Name of Custodian of Records:<span class="inputBox"><input type="text", name="custodian_name", id="id_custodian_name"></span><br>
+                <span class="indentedInputs">Custodian's title:<span class="inputBox"><input type="text", name="custodian_title", id="id_custodian_title"></span></span><br>
+                <span class="indentedInputs">Organization name:<span class="inputBox"><input type="text", name="org_name", id="id_org_name"></span></span><br>
+                <span class="indentedInputs">Organization address line 1:<span class="inputBox"><input type="text", name="org_address1", id="id_org_address1"></span></span><br>
+                <span class="indentedInputs">Organization address line 2:<span class="inputBox"><input type="text", name="org_address2", id="id_org_address2"></span></span><br>
+                <span class="indentedInputs">Organization address line 3:<span class="inputBox"><input type="text", name="org_address3", id="id_org_address3"></span></span><br>
+        </span></form><br>
+
+        <label for="FOIA_parties">Parties that the FOIA documents pertain to:</label>
+        <span class="inputBox"><input type="text", name="FOIA_parties", id="id_FOIA_parties"></span><br></br>
+    </div>
+
+
+    <div id="buttonVisual">
+        <button onclick="generate()">Generate document(s)</button>
+        <span class="indentedInputs"> <input type="checkbox", checked="checked", id="id_defaultFilename", name="defaultFilename">
+                <label title="Current structure is: Client name Document name", for="id_defaultFilename"> Use default file naming structure? </label>
+        </span>
+    </div>
+</div>
+
+ 
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.21.1/docxtemplater.js" defer></script>
+<script src="https://unpkg.com/pizzip@3.0.6/dist/pizzip.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js" defer></script>
+<script src="https://unpkg.com/pizzip@3.0.6/dist/pizzip-utils.js" defer></script>
+<script src="js/discoveryDocs.js"></script>
+
+
+</html>

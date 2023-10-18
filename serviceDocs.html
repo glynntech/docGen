@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+    <link rel="icon" href="https://hawkinsandjedziniak.com/wp-content/uploads/2021/05/logo-placeholder.png">
+    <link rel="stylesheet" href="main.css"> 
+	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
+    <title>Service Docs</title>
+</head>
+
+
+
+<body>
+    <noscript>This page requires JavaScript be available and enabled to function properly</noscript>
+	
+	<div class="sidebar">
+		<span class="logoOrientation">
+			<img src="https://hawkinsandjedziniak.com/wp-content/uploads/2021/05/logo-placeholder.png", width="120" height="120">
+		</span><br></br>
+		<a href="home.html">Home</a> <br></br>
+		<a href="adminDocs.html">Administrative</a>
+		<a href="appealDocs.html">Appeals</a>
+		<a href="discoveryDocs.html">Discovery</a>
+		<a href="motionDocs.html">Motions</a>
+		<a href="serviceDocs.html">Service</a>
+		<a href="subpoenaDocs.html">Subpoenas</a> <br></br>
+		<a href="faqs.html">FAQs</a>
+		<a href="contact.html">Contact</a>
+	</div>
+	
+	
+	
+	<div class="main">
+		<h1>Service Documents</h1>
+		
+		<label for="documentSelect">Select a document: </label>
+		<span class="inputBox">
+			<select id="id_docSelect", onchange="docSelectChange(this);">
+				<option value="n/a" selected disabled hidden></option>
+					<option value="AccServ">Acceptance of service</option>
+					<option value="AffDef">Affidavit of default (non responsive)</option>
+					<option value="AffServ">Affidavit of service</option>
+					<option value="CertServ">Certificate of service</option>
+			</select>
+		</span> <br>
+		
+		<span class="indentedInputs">
+			<label for="jurisdiction">Jurisdiction: </label>
+				<span class="inputBox">
+					<select name="jurisdiction", id="id_jurisdiction", onchange="jurisdictionChange(this);">
+						<option value="n/a" selected disabled hidden></option>
+							<option value="state">State</option>
+							<option value="federal">Federal</option>
+					</select>
+				</span>
+		</span> <br></br><br>
+		
+		
+		
+		<!-- header inputs -->
+		<label for="filingCounty">Filing county:</label>
+		<span class="inputBox">
+			<select id="id_filingCounty">
+				<option value="n/a" selected disabled hidden></option>
+				<option value="Abbeville">Abbeville</option>
+				<option value="Aiken">Aiken</option>
+				<option value="Allendale">Allendale</option>
+				<option value="Anderson">Anderson</option>
+				<option value="Bamberg">Bamberg</option>
+				<option value="Barnwell">Barnwell</option>
+				<option value="Beaufort">Beaufort</option>
+				<option value="Berkeley">Berkeley</option>
+				<option value="Calhoun">Calhoun</option>
+				<option value="Charleston">Charleston</option>
+				<option value="Cherokee">Cherokee</option>
+				<option value="Chester">Chester</option>
+				<option value="Chesterfield">Chesterfield</option>
+				<option value="Clarendon">Clarendon</option>
+				<option value="Colleton">Colleton</option>
+				<option value="Darlington">Darlington</option>
+				<option value="Dillon">Dillon</option>
+				<option value="Dorchester">Dorchester</option>
+				<option value="Edgefield">Edgefield</option>
+				<option value="Fairfield">Fairfield</option>
+				<option value="Florence">Florence</option>
+				<option value="Georgetown">Georgetown</option>
+				<option value="Greenville">Greenville</option>
+				<option value="Greenwood">Greenwood</option>
+				<option value="Hampton">Hampton</option>
+				<option value="Horry">Horry</option>
+				<option value="Jasper">Jasper</option>
+				<option value="Kershaw">Kershaw</option>
+				<option value="Lancaster">Lancaster</option>
+				<option value="Laurens">Laurens</option>
+				<option value="Lee">Lee</option>
+				<option value="Lexington">Lexington</option>
+				<option value="Marion">Marion</option>
+				<option value="Marlboro">Marlboro</option>
+				<option value="McCormick">McCormick</option>
+				<option value="Newberry">Newberry</option>
+				<option value="Oconee">Oconee</option>
+				<option value="Orangeburg">Orangeburg</option>
+				<option value="Pickens">Pickens</option>
+				<option value="Richland">Richland</option>
+				<option value="Saluda">Saluda</option>
+				<option value="Spartanburg">Spartanburg</option>
+				<option value="Sumter">Sumter</option>
+				<option value="Union">Union</option>
+				<option value="Williamsburg">Williamsburg</option>
+				<option value="York">York</option>
+			</select>
+		</span> <br>
+
+		<label for="filingCourt">Filing court:</label>
+		<span class="inputBox">
+			<select name="filingCourt", id="id_filingCourt", disabled="disabled">
+				<option value="n/a" selected disabled hidden></option>				
+				<option value="In the Court of Common Pleas">In the Court of Common Pleas</option>
+				<option value="In the Court of General Sessions">In the Court of General Sessions</option>
+				<option value="In the Magistrates Court">In the Magistrates Court</option>					
+			</select>
+		</span> <br>
+		
+		<form id="frmCaseNumber">
+			Case number: <span class="inputBox"><input type="text", name="caseNumber", id="id_caseNumber"></span>
+		</form><br>
+		
+		<label for="plaintiffName">Plaintiff name(s): </label>
+		<span class="inputBox">
+			<input type="text", name="plaintiffName", id="id_plaintiffName">
+		</span><br>
+
+		<span class="indentedInputs">
+			<label for="plaintiffNumber">Is there more than 1 Plaintiff? </label>
+			<span class="inputBox">
+				<select id="id_plaintiffNumber", onchange="plaintiffNumberChange(this);">
+					<option value=0>No</option>
+					<option value=1>Yes</option>
+				</select>
+			</span> <br>
+		</span>
+
+		<span class="indentedInputs">
+			<label for="plaintiffSex">What is the sex of the Plaintiff? </label>
+			<span class="inputBox">
+				<select id="id_plaintiffSex", title="Only if there is 1 Plaintiff attached">
+					<option value="n/a" selected disabled hidden></option>
+					<option value="female">Female</option>
+					<option value="male">Male</option>
+					<option value="nonbinary">Non-binary</option>
+				</select>
+			</span>
+		</span> <br>
+		
+		
+		
+		<label for="defendantName">Defendant name(s): </label>
+		<span class="inputBox">
+			<input type="text", name="defendantName", id="id_defendantName">
+		</span><br>
+
+		<span class="indentedInputs">
+			<label for="defendantNumber">Is there more than 1 Defendant? </label>
+			<span class="inputBox">
+				<select id="id_defendantNumber">
+					<option value=0>No</option>
+					<option value=1>Yes</option>
+				</select>
+			</span>
+		</span> <br></br>
+
+		
+		
+		
+		
+		<div id="AcceptanceService">
+		
+			<label for="attorneyAccepting">Attorney accepting service:
+			<span class="inputBox">
+				<select name="attorneyAccepting", id="id_attorneyAccepting">
+					<option value="n/a" selected disabled hidden></option>				
+					<option value="Joshua T. Hawkins">Joshua T. Hawkins</option>
+					<option value="Helena L. Jedziniak">Helena L. Jedziniak</option>
+				</select>
+			</span>
+			
+		</div>
+		
+		
+		
+		<div id="AffidavitDefault">
+		
+			<label for="defendantInDefault">Which Defendant is in default? </label>
+			<span class="inputBox">
+				<input type="text", name="defendantInDefault", id="id_defendantInDefault", title="Leave blank to mirror Defendant name(s)">
+			</span> <br>
+			
+			<label for="attorneyProducing">Name of Attorney producing document:
+			<span class="inputBox">
+				<select name="attorneyProducing", id="id_attorneyProducing">
+					<option value="n/a" selected disabled hidden></option>				
+					<option value="Joshua T. Hawkins">Joshua T. Hawkins</option>
+					<option value="Helena L. Jedziniak">Helena L. Jedziniak</option>
+				</select>
+			</span> <br></br>
+			
+			<label for="summonsFiledDate">Date summons and complaint were filed:</label>
+			<span class="inputBox">
+				<input type="date-local", placeholder="mm/dd/yyyy", name="summonsFiledDate", id="id_summonsFiledDate", size="6">
+			</label>
+			</span> <br>
+
+			<label for="summonsServedDate">Date summons and complaint were served:</label>
+			<span class="inputBox">
+				<input type="date-local", placeholder="mm/dd/yyyy", name="summonsServedDate", id="id_summonsServedDate", size="6">
+			</label>
+			</span>
+
+		</div>
+		
+		
+		
+		<div id="AffidavitService">
+			<label for="processServer">Name of Process Server: </label>
+			<span class="inputBox">
+				<input type="text", name="processServer", id="id_processServer">
+			</span> <br></br>
+		
+		
+			<label for="defendantsServed">Number of Defendants being served: </label>
+			<span class="inputBox">
+				<select name="defendantsServed", id="id_defendantsServed", onchange="defendantsServedChange(this);">
+					<option value=1>1</option>
+					<option value=2>2</option>
+					<option value=3>3</option>
+					<option value=4>4</option>
+				</select>
+			</span> <br>
+
+			
+			<!-- def #1 block -->
+			<span class="indentedInputs">
+				<label for="servedDefOneName">Name of Defendant #1: </label>
+				<span class="inputBox">
+					<input type="text", name="servedDefOneName", id="id_servedDefOneName">
+				</span>
+			</span> <br>
+			
+				<span class="indentedInputsTwo">
+					<label for="servedDefOneAddress">Address Defendant #1 was served at: </label>
+					<span class="inputBox">
+						<input type="text", name="servedDefOneAddress", id="id_servedDefOneAddress">
+					</span>
+				</span> <br>
+
+				<span class="indentedInputsTwo">					
+					<label for="servedDefOneDate">Date Defendant #1 was served:</label>
+					<span class="inputBox">
+						<input type="date-local", name="servedDefOneDate", id="id_servedDefOneDate", size="6", placeholder="mm/dd/yyyy">
+					</span>
+				</span> <br>
+			
+				<span class="indentedInputsTwo">					
+					<label for="servedDefOneTime">Approximate time Defendant #1 was served:</label>
+					<span class="inputBox">
+						<input type="time-local", name="servedDefOneTime", id="id_servedDefOneTime", maxlength="5", size="2", placeholder="00:00">
+					<select name="servedDefOneAMPM", id="id_servedDefOneAMPM">
+						<option value="AM">AM</option>
+						<option value="PM">PM</option>
+					</select>
+					</span>
+				</span> <br>
+
+			
+			
+			
+			
+			
+			<!-- def #2 block -->
+			<span class="indentedInputs">
+				<label for="servedDefTwoName">Name of Defendant #2: </label>
+				<span class="inputBox">
+					<input type="text", name="servedDefTwoName", id="id_servedDefTwoName", disabled="disabled">
+				</span>
+			</span> <br>
+			
+				<span class="indentedInputsTwo">
+					<label for="servedDefTwoAddress">Address Defendant #2 was served at: </label>
+					<span class="inputBox">
+						<input type="text", name="servedDefTwoAddress", id="id_servedDefTwoAddress", disabled="disabled">
+					</span>
+				</span> <br>
+
+				<span class="indentedInputsTwo">					
+					<label for="servedDefTwoDate">Date Defendant #2 was served:</label>
+					<span class="inputBox">
+						<input type="date-local", name="servedDefTwoDate", id="id_servedDefTwoDate", size="6", placeholder="mm/dd/yyyy", disabled="disabled">
+					</span>
+				</span> <br>
+			
+				<span class="indentedInputsTwo">					
+					<label for="servedDefTwoTime">Approximate time Defendant #2 was served:</label>
+					<span class="inputBox">
+						<input type="time-local", name="servedDefTwoTime", id="id_servedDefTwoTime", maxlength="5", size="2", placeholder="00:00", disabled="disabled">
+					<select name="servedDefTwoAMPM", id="id_servedDefTwoAMPM", disabled="disabled">
+						<option value="AM">AM</option>
+						<option value="PM">PM</option>
+					</select>
+					</span>
+				</span> <br>
+			
+			
+			<!-- def #3 block -->
+			<span class="indentedInputs">
+				<label for="servedDefThreeName">Name of Defendant #3: </label>
+				<span class="inputBox">
+					<input type="text", name="servedDefThreeName", id="id_servedDefThreeName", disabled="disabled">
+				</span>
+			</span> <br>
+			
+				<span class="indentedInputsTwo">
+					<label for="servedDefThreeAddress">Address Defendant #3 was served at: </label>
+					<span class="inputBox">
+						<input type="text", name="servedDefThreeAddress", id="id_servedDefThreeAddress", disabled="disabled">
+					</span>
+				</span> <br>
+				
+				<span class="indentedInputsTwo">					
+					<label for="servedDefThreeDate">Date Defendant #3 was served:</label>
+					<span class="inputBox">
+						<input type="date-local", name="servedDefThreeDate", id="id_servedDefThreeDate", size="6", placeholder="mm/dd/yyyy", disabled="disabled">
+					</span>
+				</span> <br>
+			
+				<span class="indentedInputsTwo">					
+					<label for="servedDefThreeTime">Approximate time Defendant #3 was served:</label>
+					<span class="inputBox">
+						<input type="time-local", name="servedDefThreeTime", id="id_servedDefThreeTime", maxlength="5", size="2", placeholder="00:00", disabled="disabled">
+					<select name="servedDefThreeAMPM", id="id_servedDefThreeAMPM", disabled="disabled">
+						<option value="AM">AM</option>
+						<option value="PM">PM</option>
+					</select>
+					</span>
+				</span> <br>
+
+			
+			<!-- def #4 block -->
+			<span class="indentedInputs">
+				<label for="servedDefFourName">Name of Defendant #4: </label>
+				<span class="inputBox">
+					<input type="text", name="servedDefFourName", id="id_servedDefFourName", disabled="disabled">
+				</span>
+			</span> <br>
+			
+				<span class="indentedInputsTwo">
+					<label for="servedDefFourAddress">Address Defendant #4 was served at: </label>
+					<span class="inputBox">
+						<input type="text", name="servedDefFourAddress", id="id_servedDefFourAddress", disabled="disabled">
+					</span>
+				</span> <br>
+				
+				<span class="indentedInputsTwo">					
+					<label for="servedDefFourDate">Date Defendant #4 was served:</label>
+					<span class="inputBox">
+						<input type="date-local", name="servedDefFourDate", id="id_servedDefFourDate", size="6", placeholder="mm/dd/yyyy", disabled="disabled">
+					</span>
+				</span> <br>
+			
+				<span class="indentedInputsTwo">					
+					<label for="servedDefFourTime">Approximate time Defendant #4 was served:</label>
+					<span class="inputBox">
+						<input type="time-local", name="servedDefFourTime", id="id_servedDefFourTime", maxlength="5", size="2", placeholder="00:00", disabled="disabled">
+					<select name="servedDefFourAMPM", id="id_servedDefFourAMPM", disabled="disabled">
+						<option value="AM">AM</option>
+						<option value="PM">PM</option>
+					</select>
+					</span>
+				</span> <br>
+		</div>
+		
+		
+		
+		
+		
+		<div id="CertificateService">
+			
+			<label for="documentsMailed">Document(s) mailed: </label>
+			<span class="inputBox">
+				<input type="text", name="documentsMailed", id="id_documentsMailed", title="context: will be fit into the sentence 'I, the undersigned, do affirm that I mailed a copy of the foregoing **Documents mailed**, to the addresses below'">
+			</span> <br></br>
+			
+			
+			<label for="numberPartiesMailed">Number of parties being mailed: </label>
+			<span class="inputBox">
+				<select name="numberPartiesMailed", id="id_numberPartiesMailed", onchange="numberPartiesMailedChange(this);">
+					<option value=1>1</option>
+					<option value=2>2</option>
+					<option value=3>3</option>
+					<option value=4>4</option>
+				</select>
+			</span> <br>
+
+			
+			<span id="service_CoS1">
+				<span class="indentedInputs">
+					<label for="mailedPartyOneName">Name of party #1: </label>
+					<span class="inputBox">
+						<input type="text", name="mailedPartyOneName", id="id_mailedPartyOneName">
+					</span>
+				</span> <br>
+				
+					<span class="indentedInputsTwo">
+						<label for="mailedPartyOneAddressOne">Address of party #1 line 1: </label>
+						<span class="inputBox">
+							<input type="text", name="mailedPartyOneAddressOne", id="id_mailedPartyOneAddressOne">
+						</span>
+					</span> <br>
+
+					<span class="indentedInputsTwo">
+						<label for="mailedPartyOneAddressTwo">Address of party #1 line 2: </label>
+						<span class="inputBox">
+							<input type="text", name="mailedPartyOneAddressTwo", id="id_mailedPartyOneAddressTwo">
+						</span>
+					</span> <br>
+
+					<span class="indentedInputsTwo">
+						<label for="mailedPartyOneAddressThree">Address of party #1 line 3: </label>
+						<span class="inputBox">
+							<input type="text", name="mailedPartyOneAddressThree", id="id_mailedPartyOneAddressThree">
+						</span>
+					</span> <br>
+			</span>
+				
+
+			<span id="service_CoS2">
+				<span class="indentedInputs">
+					<label for="mailedPartyTwoName">Name of party #2: </label>
+					<span class="inputBox">
+						<input type="text", name="mailedPartyTwoName", id="id_mailedPartyTwoName">
+					</span>
+				</span> <br>
+				
+					<span class="indentedInputsTwo">
+						<label for="mailedPartyTwoAddressOne">Address of party #2 line 1: </label>
+						<span class="inputBox">
+							<input type="text", name="mailedPartyTwoAddressOne", id="id_mailedPartyTwoAddressOne">
+						</span>
+					</span> <br>
+
+					<span class="indentedInputsTwo">
+						<label for="mailedPartyTwoAddressTwo">Address of party #2 line 2: </label>
+						<span class="inputBox">
+							<input type="text", name="mailedPartyTwoAddressTwo", id="id_mailedPartyTwoAddressTwo">
+						</span>
+					</span> <br>
+
+					<span class="indentedInputsTwo">
+						<label for="mailedPartyTwoAddressThree">Address of party #2 line 3: </label>
+						<span class="inputBox">
+							<input type="text", name="mailedPartyTwoAddressThree", id="id_mailedPartyTwoAddressThree">
+						</span>
+					</span> <br>
+			</span>
+
+
+			<span id="service_CoS3">
+				<span class="indentedInputs">
+					<label for="mailedPartyThreeName">Name of party #3: </label>
+					<span class="inputBox">
+						<input type="text", name="mailedPartyThreeName", id="id_mailedPartyThreeName">
+					</span>
+				</span> <br>
+				
+					<span class="indentedInputsTwo">
+						<label for="mailedPartyThreeAddressOne">Address of party #3 line 1: </label>
+						<span class="inputBox">
+							<input type="text", name="mailedPartyThreeAddressOne", id="id_mailedPartyThreeAddressOne">
+						</span>
+					</span> <br>
+
+					<span class="indentedInputsTwo">
+						<label for="mailedPartyThreeAddressTwo">Address of party #3 line 2: </label>
+						<span class="inputBox">
+							<input type="text", name="mailedPartyThreeAddressTwo", id="id_mailedPartyThreeAddressTwo">
+						</span>
+					</span> <br>
+
+					<span class="indentedInputsTwo">
+						<label for="mailedPartyThreeAddressThree">Address of party #3 line 3: </label>
+						<span class="inputBox">
+							<input type="text", name="mailedPartyThreeAddressThree", id="id_mailedPartyThreeAddressThree">
+						</span>
+					</span> <br>
+			</span>
+
+
+			<span id="service_CoS4">
+				<span class="indentedInputs">
+					<label for="mailedPartyFourName">Name of party #4: </label>
+					<span class="inputBox">
+						<input type="text", name="mailedPartyFourName", id="id_mailedPartyFourName">
+					</span>
+				</span> <br>
+				
+					<span class="indentedInputsTwo">
+						<label for="mailedPartyFourAddressOne">Address of party #4 line 1: </label>
+						<span class="inputBox">
+							<input type="text", name="mailedPartyFourAddressOne", id="id_mailedPartyFourAddressOne">
+						</span>
+					</span> <br>
+
+					<span class="indentedInputsTwo">
+						<label for="mailedPartyFourAddressTwo">Address of party #4 line 2: </label>
+						<span class="inputBox">
+							<input type="text", name="mailedPartyFourAddressTwo", id="id_mailedPartyFourAddressTwo">
+						</span>
+					</span> <br>
+
+					<span class="indentedInputsTwo">
+						<label for="mailedPartyFourAddressThree">Address of party #4 line 3: </label>
+						<span class="inputBox">
+							<input type="text", name="mailedPartyFourAddressThree", id="id_mailedPartyFourAddressThree">
+						</span>
+					</span>
+			</span>
+
+		</div>
+		
+		<br>
+		
+		<div id="buttonVisual">
+			<button onclick="generate()">Generate document(s)</button>
+			<span class="indentedInputs"> <input type="checkbox", checked="checked", id="id_defaultFilename", name="defaultFilename">
+					<label title="Current structure is: Client name Document name", for="id_defaultFilename"> Use default file naming structure? </label>
+			</span>
+		</div>
+	</div>
+ 
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.21.1/docxtemplater.js" defer></script>
+<script src="https://unpkg.com/pizzip@3.0.6/dist/pizzip.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js" defer></script>
+<script src="https://unpkg.com/pizzip@3.0.6/dist/pizzip-utils.js" defer></script>
+<script src="js/serviceDocs.js"></script>
+
+
+</html>

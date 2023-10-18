@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+    <link rel="icon" href="https://hawkinsandjedziniak.com/wp-content/uploads/2021/05/logo-placeholder.png">
+    <link rel="stylesheet" href="main.css"> 
+	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
+    <title>Subpoena Docs</title>
+</head>
+
+
+<body>
+    <noscript>This page requires JavaScript be available and enabled to function properly</noscript>
+	
+	<div class="sidebar">
+		<span class="logoOrientation">
+			<img src="https://hawkinsandjedziniak.com/wp-content/uploads/2021/05/logo-placeholder.png", width="120" height="120">
+		</span><br></br>
+		<a href="home.html">Home</a> <br></br>
+		<a href="adminDocs.html">Administrative</a>
+		<a href="appealDocs.html">Appeals</a>
+		<a href="discoveryDocs.html">Discovery</a>
+		<a href="motionDocs.html">Motions</a>
+		<a href="serviceDocs.html">Service</a>
+		<a href="subpoenaDocs.html">Subpoenas</a> <br></br>
+		<a href="faqs.html">FAQs</a>
+		<a href="contact.html">Contact</a>
+	</div>
+	
+<div class="main">
+    <h1>Subpoena Documents</h1>
+    
+    <label for="documentSelect">Select a document:</label>
+    <span class="inputBox">
+        <select id="id_docSelect", onchange="primaryChange(this);">
+            <option value="n/a" selected disabled hidden></option>
+            <option value="courtAppear">Subpoena for a court appearance</option>
+            <option value="depoAppear">Subpoena for a deposition appearance</option>
+            <option value="docInsp">Subpoena for a document inspection</option>
+            <option value="premInsp">Subpoena for a premises inspection</option>
+        </select>
+    </span> <br>
+    
+    <span class="indentedInputs">
+        <label for="jurisdiction">Jurisdiction:</label>
+            <span class="inputBox">
+                <select name="jurisdiction", id="id_jurisdiction", disabled="disabled">
+                    <option value="state">State</option>
+                </select>
+            </span>
+    </span> <br>
+
+    <span class="indentedInputs">
+        <label for="courtType">Court type:</label>
+            <span class="inputBox">
+                <select name="courtType", id="id_courtType", onchange="primaryChange(this);">
+                    <option value="n/a" selected disabled hidden></option>
+                    <option value="civil">Civil</option>
+                    <option value="civilFamily">Civil (family)</option>
+                    <option value="criminal">Criminal</option>
+                </select>
+            </span>
+    </span> <br>
+    
+    </br><br>
+    
+    
+    
+    
+    
+    <!-- header inputs -->
+    <label for="filingCounty">Filing county:</label>
+    <span class="inputBox">
+        <select id="id_filingCounty">
+            <option value="n/a" selected disabled hidden></option>
+            <option value="Abbeville">Abbeville</option>
+            <option value="Aiken">Aiken</option>
+            <option value="Allendale">Allendale</option>
+            <option value="Anderson">Anderson</option>
+            <option value="Bamberg">Bamberg</option>
+            <option value="Barnwell">Barnwell</option>
+            <option value="Beaufort">Beaufort</option>
+            <option value="Berkeley">Berkeley</option>
+            <option value="Calhoun">Calhoun</option>
+            <option value="Charleston">Charleston</option>
+            <option value="Cherokee">Cherokee</option>
+            <option value="Chester">Chester</option>
+            <option value="Chesterfield">Chesterfield</option>
+            <option value="Clarendon">Clarendon</option>
+            <option value="Colleton">Colleton</option>
+            <option value="Darlington">Darlington</option>
+            <option value="Dillon">Dillon</option>
+            <option value="Dorchester">Dorchester</option>
+            <option value="Edgefield">Edgefield</option>
+            <option value="Fairfield">Fairfield</option>
+            <option value="Florence">Florence</option>
+            <option value="Georgetown">Georgetown</option>
+            <option value="Greenville">Greenville</option>
+            <option value="Greenwood">Greenwood</option>
+            <option value="Hampton">Hampton</option>
+            <option value="Horry">Horry</option>
+            <option value="Jasper">Jasper</option>
+            <option value="Kershaw">Kershaw</option>
+            <option value="Lancaster">Lancaster</option>
+            <option value="Laurens">Laurens</option>
+            <option value="Lee">Lee</option>
+            <option value="Lexington">Lexington</option>
+            <option value="Marion">Marion</option>
+            <option value="Marlboro">Marlboro</option>
+            <option value="McCormick">McCormick</option>
+            <option value="Newberry">Newberry</option>
+            <option value="Oconee">Oconee</option>
+            <option value="Orangeburg">Orangeburg</option>
+            <option value="Pickens">Pickens</option>
+            <option value="Richland">Richland</option>
+            <option value="Saluda">Saluda</option>
+            <option value="Spartanburg">Spartanburg</option>
+            <option value="Sumter">Sumter</option>
+            <option value="Union">Union</option>
+            <option value="Williamsburg">Williamsburg</option>
+            <option value="York">York</option>
+        </select>
+    </span> <br>
+
+    <label for="filingCourt">Filing court:</label>
+    <span class="inputBox">
+        <select name="filingCourt", id="id_filingCourt">
+            <option value="n/a" selected disabled hidden></option>
+            <option value="In the Court of Common Pleas">In the Court of Common Pleas</option>
+            <option value="In the Court of General Sessions">In the Court of General Sessions</option>
+            <option value="In the Magistrates Court">In the Magistrates Court</option>					
+        </select>
+    </span> <br>
+    
+    <label for="attorneyFiling">Attorney filing:</label>
+    <span class="inputBox">
+        <select name="attorneyFiling", id="id_attorneyFiling">
+            <option value="n/a" selected disabled hidden></option>
+            <option value="Joshua T. Hawkins">Joshua T. Hawkins</option>
+            <option value="Helena L. Jedziniak">Helena L. Jedziniak</option>
+        </select>
+    </span> <br>
+    
+
+    Case number: <span class="inputBox"><input type="text", name="caseNumber", id="id_caseNumber"></span><br></br>
+
+    Plaintiff name(s):<span class="inputBox"><input type="text", name="plaintiffName", id="id_plaintiffName"></span><br>
+    <span class="indentedInputs">Is there more than 1 Plaintiff?<span class="inputBox">
+            <select id="id_plaintiffNumber", onchange="plaintiffNumberChange(this);">
+                <option value="n/a" selected disabled hidden></option>
+                <option value=0>No</option>
+                <option value=1>Yes</option>
+            </select>
+        </span></span><br>
+    <span class="indentedInputs">What is the sex of the Plaintiff?<span class="inputBox">
+            <select id="id_plaintiffSex", title="Only if there is 1 Plaintiff attached">
+                <option value="n/a" selected disabled hidden></option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+                <option value="nonbinary">Non-binary</option>
+            </select>
+        </span>
+    </span><br>
+    
+    Defendant name(s):<span class="inputBox"><input type="text", name="defendantName", id="id_defendantName"></span><br>
+    <span class="indentedInputs">Is there more than 1 Defendant?<span class="inputBox">
+            <select id="id_defendantNumber">
+                <option value="n/a" selected disabled hidden></option>
+                <option value=0>No</option>
+                <option value=1>Yes</option>
+            </select>
+        </span></span><br></br>
+
+
+    Name of individual being subpoenaed:<span class="inputBox"><input type="text", name="subpName", id="id_subpName"></span><br>
+    <span class="indentedInputs">Address of subpoenaed individual line 1:<span class="inputBox"><input type="text", name="subpAddress1", id="id_subpAddress1"></span></span><br>
+    <span class="indentedInputs">Address of subpoenaed individual line 2:<span class="inputBox"><input type="text", name="subpAddress2", id="id_subpAddress2"></span></span><br>
+    <span class="indentedInputs">Address of subpoenaed individual line 3:<span class="inputBox"><input type="text", name="subpAddress3", id="id_subpAddress3"></span></span><br></br>
+
+
+
+
+    <span id="courtroom">
+        Courtroom name/number:<span class="inputBox"><input type="text", name="courtroomName", id="id_courtroomName"></span><br>
+        <span class="indentedInputs">Courtroom address line 1:<span class="inputBox"><input type="text", name="courtroomAddress1", id="id_courtroomAddress1"></span></span><br>
+        <span class="indentedInputs">Courtroom address line 2:<span class="inputBox"><input type="text", name="courtroomAddress2", id="id_courtroomAddress2"></span></span><br>
+        <span class="indentedInputs">Courtroom address line 3:<span class="inputBox"><input type="text", name="courtroomAddress3", id="id_courtroomAddress3"></span></span><br>
+        <span class="indentedInputsTwo">Date court appearance will take place:<span class="inputBox"><input type="date-local", placeholder="mm/dd/yyyy", name="courtroomDate", id="id_courtroomDate", size="6"></span></span><br>
+        <span class="indentedInputsTwo">Time court appearance will take place:<span class="inputBox"><input type="time-local", name="courtroomTime", id="id_courtroomTime", maxlength="5", size="2", placeholder="00:00"></span></span>
+        <select name="courtroomAMPM", id="id_courtroomAMPM">
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+        </select><br></br></span>
+    </span>
+
+    <span id="docInspection">
+        Number of documents, or objects, to be inspected:<span class="inputBox">
+            <select id="id_docInspection", onchange="docInspectionChange()">
+                <option value=0>0</option>
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+                <option value=5>5</option>
+                <option value=6>6</option>
+                <option value=7>7</option>
+                <option value=8>8</option>
+                <option value=9>9</option>
+                <option value=10>10</option>
+            </select>
+        </span><br>
+
+        <span id="docObj1"><span class="indentedInputs">Name of document or object #1:<span class="inputBox"><input type="text", name="docObj1", id="id_docObj1", size="30"></span></span><br></span>
+        <span id="docObj2"><span class="indentedInputs">Name of document or object #2:<span class="inputBox"><input type="text", name="docObj2", id="id_docObj2", size="30"></span></span><br></span>
+        <span id="docObj3"><span class="indentedInputs">Name of document or object #3:<span class="inputBox"><input type="text", name="docObj3", id="id_docObj3", size="30"></span></span><br></span>
+        <span id="docObj4"><span class="indentedInputs">Name of document or object #4:<span class="inputBox"><input type="text", name="docObj4", id="id_docObj4", size="30"></span></span><br></span>
+        <span id="docObj5"><span class="indentedInputs">Name of document or object #5:<span class="inputBox"><input type="text", name="docObj5", id="id_docObj5", size="30"></span></span><br></span>
+        <span id="docObj6"><span class="indentedInputs">Name of document or object #6:<span class="inputBox"><input type="text", name="docObj6", id="id_docObj6", size="30"></span></span><br></span>
+        <span id="docObj7"><span class="indentedInputs">Name of document or object #7:<span class="inputBox"><input type="text", name="docObj7", id="id_docObj7", size="30"></span></span><br></span>
+        <span id="docObj8"><span class="indentedInputs">Name of document or object #8:<span class="inputBox"><input type="text", name="docObj8", id="id_docObj8", size="30"></span></span><br></span>
+        <span id="docObj9"><span class="indentedInputs">Name of document or object #9:<span class="inputBox"><input type="text", name="docObj9", id="id_docObj9", size="30"></span></span><br></span>
+        <span id="docObj10"><span class="indentedInputs">Name of document or object #10:<span class="inputBox"><input type="text", name="docObj10", id="id_docObj10", size="30"></span></span><br></span><br>
+    </span>
+
+    <span id="inspectionAddress">
+        Address where inspection will take place line 1:<span class="inputBox"><input type="text", name="inspectionAddress1", id="id_inspectionAddress1"></span><br>
+        Address where inspection will take place line 2:<span class="inputBox"><input type="text", name="inspectionAddress2", id="id_inspectionAddress2"></span><br>
+        Address where inspection will take place line 3:<span class="inputBox"><input type="text", name="inspectionAddress3", id="id_inspectionAddress3"></span><br>
+        <span class="indentedInputs">Date inspection will take place:<span class="inputBox"><input type="date-local", placeholder="mm/dd/yyyy", name="inspectionDate", id="id_inspectionDate", size="6"></span></span><br>
+        <span class="indentedInputs">Time inspection will take place:<span class="inputBox"><input type="time-local", name="inspectionTime", id="id_inspectionTime", maxlength="5", size="2", placeholder="00:00"></span></span>
+        <select name="inspectionAMPM", id="id_inspectionAMPM">
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+        </select><br></br></span>
+    </span>
+
+    <span id="depoAddress">
+        Address where deposition will take place line 1:<span class="inputBox"><input type="text", name="depoAddress1", id="id_depoAddress1"></span><br>
+        Address where deposition will take place line 2:<span class="inputBox"><input type="text", name="depoAddress2", id="id_depoAddress2"></span><br>
+        Address where deposition will take place line 3:<span class="inputBox"><input type="text", name="depoAddress3", id="id_depoAddress3"></span><br>
+        <span class="indentedInputs">Date deposition will take place:<span class="inputBox"><input type="date-local", placeholder="mm/dd/yyyy", name="depoDate", id="id_depoDate", size="6"></span></span><br>
+        <span class="indentedInputs">Time deposition will take place:<span class="inputBox"><input type="time-local", name="depoTime", id="id_depoTime", maxlength="5", size="2", placeholder="00:00"></span></span>
+        <select name="depoAMPM", id="id_depoAMPM">
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+        </select><br></br></span>
+    </span>
+
+    <span id="premInspection">
+        Address of premises to be inspected line 1:<span class="inputBox"><input type="text", name="premisesAddress1", id="id_premisesAddress1"></span><br>
+        Address of premises to be inspected line 2:<span class="inputBox"><input type="text", name="premisesAddress2", id="id_premisesAddress2"></span><br>
+        Address of premises to be inspected line 3:<span class="inputBox"><input type="text", name="premisesAddress3", id="id_premisesAddress3"></span><br>
+        <span class="indentedInputs">Date premises inspection will take place:<span class="inputBox"><input type="date-local", placeholder="mm/dd/yyyy", name="premInspectDate", id="id_premInspectDate", size="6"></span></span><br>
+        <span class="indentedInputs">Time premises inspection will take place:<span class="inputBox"><input type="time-local", name="premInspectTime", id="id_premInspectTime", maxlength="5", size="2", placeholder="00:00"></span></span>
+        <select name="premInspectAMPM", id="id_premInspectAMPM">
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+        </select><br></br></span>
+    </span>
+
+
+    <div id="buttonVisual">
+        <button onclick="generate()">Generate document(s)</button>
+        <span class="indentedInputs"> <input type="checkbox", checked="checked", id="id_defaultFilename", name="defaultFilename">
+                <label title="Current structure is: Client name Document name", for="id_defaultFilename"> Use default file naming structure? </label>
+        </span><br></br>
+    </div>
+</div>
+
+ 
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.21.1/docxtemplater.js" defer></script>
+<script src="https://unpkg.com/pizzip@3.0.6/dist/pizzip.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js" defer></script>
+<script src="https://unpkg.com/pizzip@3.0.6/dist/pizzip-utils.js" defer></script>
+<script src="js/subpoenaDocs.js"></script>
+
+
+</html>

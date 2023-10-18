@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+    <link rel="icon" href="assets/images/logo.jpg">
+    <link rel="stylesheet" href="main.css"> 
+	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
+    <title>Appeal Docs</title>
+</head>
+
+
+<body>
+    <noscript>This page requires JavaScript be available and enabled to function properly</noscript>
+	
+	<div class="sidebar">
+		<span class="logoOrientation">
+			<img src="assets/images/logo.jpg", width="120" height="120">
+		</span><br></br>
+		<a href="home.html">Home</a> <br></br>
+		<a href="adminDocs.html">Administrative</a>
+		<a href="appealDocs.html">Appeals</a>
+		<a href="discoveryDocs.html">Discovery</a>
+		<a href="motionDocs.html">Motions</a>
+		<a href="serviceDocs.html">Service</a>
+		<a href="subpoenaDocs.html">Subpoenas</a> <br></br>
+		<a href="faqs.html">FAQs</a>
+		<a href="contact.html">Contact</a>
+	</div>
+	
+<div class="main">
+    <h1>Appeal Documents</h1>
+    
+    <label for="documentSelect">Select a document: </label>
+    <span class="inputBox">
+        <select id="id_docSelect", onchange="primaryChange(this);">
+            <option value="n/a" selected disabled hidden></option>
+            <option value="docPacket">Notice of Appeal packet</option>
+            <option value="NoticeOfAppeal">Notice of Appeal</option>
+            <option value="CertOfService">Certificate of Service</option>
+            <option value="ProofOfService">Proof of Service</option>
+            <option value="TranscriptForm">Transcript form</option>
+        </select>
+    </span> <br>
+    
+    <span class="indentedInputs">
+        <label for="jurisdiction">Jurisdiction: </label>
+            <span class="inputBox">
+                <select name="jurisdiction", id="id_jurisdiction", onchange="primaryChange(this);">
+                    <option value="n/a" selected disabled hidden></option>
+                    <option value="state">State</option>
+                    <option value="federal">Federal</option>
+                </select>
+            </span>
+    </span> <br>
+    
+    </br><br>
+    
+    
+    
+    
+    
+    <!-- header inputs -->
+    <label for="filingCounty">Filing county:</label>
+    <span class="inputBox">
+        <select id="id_filingCounty">
+            <option value="n/a" selected disabled hidden></option>
+            <option value="Abbeville">Abbeville</option>
+            <option value="Aiken">Aiken</option>
+            <option value="Allendale">Allendale</option>
+            <option value="Anderson">Anderson</option>
+            <option value="Bamberg">Bamberg</option>
+            <option value="Barnwell">Barnwell</option>
+            <option value="Beaufort">Beaufort</option>
+            <option value="Berkeley">Berkeley</option>
+            <option value="Calhoun">Calhoun</option>
+            <option value="Charleston">Charleston</option>
+            <option value="Cherokee">Cherokee</option>
+            <option value="Chester">Chester</option>
+            <option value="Chesterfield">Chesterfield</option>
+            <option value="Clarendon">Clarendon</option>
+            <option value="Colleton">Colleton</option>
+            <option value="Darlington">Darlington</option>
+            <option value="Dillon">Dillon</option>
+            <option value="Dorchester">Dorchester</option>
+            <option value="Edgefield">Edgefield</option>
+            <option value="Fairfield">Fairfield</option>
+            <option value="Florence">Florence</option>
+            <option value="Georgetown">Georgetown</option>
+            <option value="Greenville">Greenville</option>
+            <option value="Greenwood">Greenwood</option>
+            <option value="Hampton">Hampton</option>
+            <option value="Horry">Horry</option>
+            <option value="Jasper">Jasper</option>
+            <option value="Kershaw">Kershaw</option>
+            <option value="Lancaster">Lancaster</option>
+            <option value="Laurens">Laurens</option>
+            <option value="Lee">Lee</option>
+            <option value="Lexington">Lexington</option>
+            <option value="Marion">Marion</option>
+            <option value="Marlboro">Marlboro</option>
+            <option value="McCormick">McCormick</option>
+            <option value="Newberry">Newberry</option>
+            <option value="Oconee">Oconee</option>
+            <option value="Orangeburg">Orangeburg</option>
+            <option value="Pickens">Pickens</option>
+            <option value="Richland">Richland</option>
+            <option value="Saluda">Saluda</option>
+            <option value="Spartanburg">Spartanburg</option>
+            <option value="Sumter">Sumter</option>
+            <option value="Union">Union</option>
+            <option value="Williamsburg">Williamsburg</option>
+            <option value="York">York</option>
+        </select>
+    </span> <br>
+
+    <label for="filingCourt">Filing court:</label>
+    <span class="inputBox">
+        <select name="filingCourt", id="id_filingCourt", disabled="disabled">
+            <option value="n/a" selected disabled hidden></option>
+            <option value="In the Court of Common Pleas">In the Court of Common Pleas</option>
+            <option value="In the Court of General Sessions">In the Court of General Sessions</option>
+            <option value="In the Magistrates Court">In the Magistrates Court</option>					
+        </select>
+    </span> <br>
+    
+    <label for="attorneyFiling">Attorney filing:</label>
+    <span class="inputBox">
+        <select name="attorneyFiling", id="id_attorneyFiling">
+            <option value="n/a" selected disabled hidden></option>
+            <option value="Joshua T. Hawkins">Joshua T. Hawkins</option>
+            <option value="Helena L. Jedziniak">Helena L. Jedziniak</option>
+            <option value="Ehtan L. Jedziniak">Ethan L. Jedziniak</option>
+        </select>
+    </span> <br>
+    
+
+    Case number: <span class="inputBox"><input type="text", name="caseNumber", id="id_caseNumber"></span><br></br>
+
+    Appellant name(s):<span class="inputBox"><input type="text", name="appellantName", id="id_appellantName"></span><br>
+    <span class="indentedInputs">Is there more than 1 Appellant?<span class="inputBox">
+            <select id="id_appellantNumber">
+                <option value="n/a" selected disabled hidden></option>
+                <option value=0>No</option>
+                <option value=1>Yes</option>
+            </select>
+        </span></span><br>
+
+    Respondent name(s):<span class="inputBox"><input type="text", name="respondentName", id="id_respondentName"></span><br>
+    <span class="indentedInputs">Is there more than 1 Respondent?<span class="inputBox">
+            <select id="id_respondentNumber">
+                <option value="n/a" selected disabled hidden></option>
+                <option value=0>No</option>
+                <option value=1>Yes</option>
+            </select>
+        </span></span><br></br>
+
+
+    <span id="courtJudge">
+        <label for="circuitCourtNum">Circuit court number:</label>
+        <span class="inputBox">
+            <select name="circuitCourtNum", id="id_circuitCourtNum">
+                <option value="n/a" selected disabled hidden></option>
+                <option value="First">First</option>
+                <option value="Second">Second</option>
+                <option value="Third">Third</option>
+                <option value="Fourth">Fourth</option>
+                <option value="Fifth">Fifth</option>
+                <option value="Sixth">Sixth</option>
+                <option value="Seventh">Seventh</option>
+                <option value="Eighth">Eighth</option>
+                <option value="Ninth">Ninth</option>
+                <option value="Tenth">Tenth</option>
+                <option value="Eleventh">Eleventh</option>
+                <option value="Twelfth">Twelfth</option>
+                <option value="Thirteenth">Thirteenth</option>
+            </select>
+        </span> <br>  
+
+        <label for="courtType">Court type:</label>
+        <span class="inputBox">
+            <select id="id_courtType">
+                <option value="n/a" selected disabled hidden></option>
+                <option value="Circuit">Circuit court</option>
+                <option value="Family">Family court</option>
+                <option value="Magistrate">Magistrate court</option>
+                <option value="Municipal">Municipal court</option>
+                <option value="Probate">Probate court</option>
+            </select>
+        </span> <br>
+
+        <span class="indentedInputs">Judge's first name: <span class="inputBox"><input type="text", name="judgeFirstName", id="id_judgeFirstName"></span></span><br>
+        <span class="indentedInputs">Judge's last name: <span class="inputBox"><input type="text", name="judgeLastName", id="id_judgeLastName"></span></span><br>
+        <span class="indentedInputsTwo">Judge's chambers address line 1: <span class="inputBox"><input type="text", name="judgeAddress1", id="id_judgeAddress1"></span></span><br>
+        <span class="indentedInputsTwo">Judge's chambers address line 2: <span class="inputBox"><input type="text", name="judgeAddress2", id="id_judgeAddress2"></span></span><br>
+        <span class="indentedInputsTwo">Judge's chambers address line 3: <span class="inputBox"><input type="text", name="judgeAddress3", id="id_judgeAddress3"></span></span><br></br>
+    </span>
+    
+    <span id="order">
+        Date judge issued order: <span class="inputBox"><input type="date-local", name="orderIssuedDate", id="id_orderIssuedDate", size="6", placeholder="mm/dd/yyyy"></span><br>
+        Date order was received: <span class="inputBox"><input type="date-local", name="orderReceivedDate", id="id_orderReceivedDate", size="6", placeholder="mm/dd/yyyy"></span><br>
+        <span class="indentedInputs">How was the order received? <span class="inputBox">
+            <select id="id_orderReceivedHow">
+                <option value="n/a" selected disabled hidden></option>
+                <option value="Electronically">Electronically</option>
+                <option value="Written">Written</option>
+            </select>
+        </span></span><br>
+        <span class="indentedInputs">What is function of the order?<span class="inputBox"><input type="text", name="orderFunction", id="id_orderFunction", size="50", title="context is: Notice is hereby given that the Appellant in the above-named case hereby appeal to the United States Court of Appeals for the Circuit from the order __________ entered in this action on appeal date.", placeholder="e.g. granting the defendants’ motion for summary judgment"></span></span><br></br>
+    </span>
+
+    <span id="proceeding">
+        Date of proceeding:<span class="inputBox"><input type="date-local", name="proceedingDate", id="id_proceedingDate", size="6", placeholder="mm/dd/yyyy"></span><br>
+        <span class="indentedInputs">Name(s) of opposing counsel in proceeding: <span class="inputBox"><input type="text", name="proceedingOpposingCounsel", id="id_proceedingOpposingCounsel"></span></span><br>
+        <span class="indentedInputs">Is the transcript request of the proceeding expedited?<span class="inputBox">
+            <select id="id_expeditedTranscript">
+                <option value="n/a" selected disabled hidden></option>
+                <option value=0>No</option>
+                <option value=1>Yes</option>
+            </select>
+        </span></span><br></br>
+    </span>
+
+        
+    <span id="clerk">
+        Clerk of Court's prefix:<span class="inputBox">
+            <select id="id_clerkPrefex">
+                <option value="Mr.">Mr.</option>
+                <option value="Mrs." selected>Mrs.</option>
+                <option value="Miss.">Miss.</option>
+                <option value="Ms.">Ms.</option>
+            </select>
+        </span><br>
+        <span class="indentedInputs">First name of the Clerk of Court:<span class="inputBox"><input type="text", name="clerkFirstName", id="id_clerkFirstName", value="Jenny Abbot"></span></span><br>
+        <span class="indentedInputs">Last name of the Clerk of Court:<span class="inputBox"><input type="text", name="clerkLastName", id="id_clerkLastName", value="Kitchings"></span></span><br></br>
+    </span>
+
+
+    <span id="courtReporter">
+        Court Reporter's prefix:<span class="inputBox">
+            <select id="id_courtRepPrefex">
+                <option value="n/a" selected disabled hidden></option>
+                <option value="Mr.">Mr.</option>
+                <option value="Mrs.">Mrs.</option>
+                <option value="Miss.">Miss.</option>
+                <option value="Ms.">Ms.</option>
+            </select>
+        </span><br>
+        <span class="indentedInputs">First name of the Court Reporter:<span class="inputBox"><input type="text", name="courtRepFirstName", id="id_courtRepFirstName"></span></span><br>
+        <span class="indentedInputs">Last name of the Court Reporter:<span class="inputBox"><input type="text", name="courtRepLastName", id="id_courtRepLastName"></span></span><br>
+        <span class="indentedInputsTwo">Court Reporter's address line 1:<span class="inputBox"><input type="text", name="courtRepAddress1", id="id_courtRepAddress1"></span></span><br>
+        <span class="indentedInputsTwo">Court Reporter's address line 2:<span class="inputBox"><input type="text", name="courtRepAddress2", id="id_courtRepAddress2"></span></span><br>
+        <span class="indentedInputsTwo">Court Reporter's address line 3:<span class="inputBox"><input type="text", name="courtRepAddress3", id="id_courtRepAddress3"></span></span><br></br>
+    </span>
+
+    <span id="partiesMailed">
+        Number of parties mailed (excluding judge & court admin, where relevant):<span class="inputBox">
+            <select id="id_partiesMailed", onchange="partiesMailedChange()">
+                <option value=0>0</option>
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+            </select>
+        </span><br>
+
+        <span id="appeals_partyMailed1">
+            <span class="indentedInputs">Name of addressee #1:<span class="inputBox"><input type="text", name="party1_name", id="id_party1_name"></span></span><br>
+            <span class="indentedInputsTwo">Is addressee #1 an attorney for the respondent?<span class="inputBox">
+                <select id="id_party1_attorney", onchange="attorneyForRespChange()">
+                    <option value="n/a" selected disabled hidden></option>
+                    <option value=0>No</option>
+                    <option value=1>Yes</option>
+                </select>
+            </span></span><br>
+            <span class="indentedInputsThree">Attorney for which respondent?<span class="inputBox"><input type="text", name="party1_whichRespondent", id="id_party1_whichRespondent", disabled="disabled"></span></span><br>
+            <span class="indentedInputsThree">Firm addressee #1 works with?<span class="inputBox"><input type="text", name="party1_whichFirm", id="id_party1_whichFirm", disabled="disabled"></span></span><br>
+            <span class="indentedInputsTwo">Address line 1<span class="inputBox"><input type="text", name="party1_address1", id="id_party1_address1"></span></span><br>
+            <span class="indentedInputsTwo">Address line 2<span class="inputBox"><input type="text", name="party1_address2", id="id_party1_address2"></span></span><br>
+            <span class="indentedInputsTwo">Address line 3<span class="inputBox"><input type="text", name="party1_address3", id="id_party1_address3"></span></span><br>
+        </span>
+
+        <span id="appeals_partyMailed2">
+            <span class="indentedInputs">Name of addressee #2:<span class="inputBox"><input type="text", name="party2_name", id="id_party2_name"></span></span><br>
+            <span class="indentedInputsTwo">Is addressee #2 an attorney for the respondent?<span class="inputBox">
+                <select id="id_party2_attorney", onchange="attorneyForRespChange()">
+                    <option value="n/a" selected disabled hidden></option>
+                    <option value=0>No</option>
+                    <option value=1>Yes</option>
+                </select>
+            </span></span><br>
+            <span class="indentedInputsThree">Attorney for which respondent?<span class="inputBox"><input type="text", name="party2_whichRespondent", id="id_party2_whichRespondent", disabled="disabled"></span></span><br>
+            <span class="indentedInputsThree">Firm addressee #2 works with?<span class="inputBox"><input type="text", name="party2_whichFirm", id="id_party2_whichFirm", disabled="disabled"></span></span><br>
+            <span class="indentedInputsTwo">Address line 1<span class="inputBox"><input type="text", name="party2_address1", id="id_party2_address1"></span></span><br>
+            <span class="indentedInputsTwo">Address line 2<span class="inputBox"><input type="text", name="party2_address2", id="id_party2_address2"></span></span><br>
+            <span class="indentedInputsTwo">Address line 3<span class="inputBox"><input type="text", name="party2_address3", id="id_party2_address3"></span></span><br>
+        </span>
+
+        <span id="appeals_partyMailed3">
+            <span class="indentedInputs">Name of addressee #3:<span class="inputBox"><input type="text", name="party3_name", id="id_party3_name"></span></span><br>
+            <span class="indentedInputsTwo">Is addressee #3 an attorney for the respondent?<span class="inputBox">
+                <select id="id_party3_attorney", onchange="attorneyForRespChange()">
+                    <option value="n/a" selected disabled hidden></option>
+                    <option value=0>No</option>
+                    <option value=1>Yes</option>
+                </select>
+            </span></span><br>
+            <span class="indentedInputsThree">Attorney for which respondent?<span class="inputBox"><input type="text", name="party3_whichRespondent", id="id_party3_whichRespondent", disabled="disabled"></span></span><br>
+            <span class="indentedInputsThree">Firm addressee #3 works with?<span class="inputBox"><input type="text", name="party3_whichFirm", id="id_party3_whichFirm", disabled="disabled"></span></span><br>
+            <span class="indentedInputsTwo">Address line 1<span class="inputBox"><input type="text", name="party3_address1", id="id_party3_address1"></span></span><br>
+            <span class="indentedInputsTwo">Address line 2<span class="inputBox"><input type="text", name="party3_address2", id="id_party3_address2"></span></span><br>
+            <span class="indentedInputsTwo">Address line 3<span class="inputBox"><input type="text", name="party3_address3", id="id_party3_address3"></span></span><br>
+        </span>
+
+        <span id="appeals_partyMailed4">
+            <span class="indentedInputs">Name of addressee #4:<span class="inputBox"><input type="text", name="party4_name", id="id_party4_name"></span></span><br>
+            <span class="indentedInputsTwo">Is addressee #4 an attorney for the respondent?<span class="inputBox">
+                <select id="id_party4_attorney", onchange="attorneyForRespChange()">
+                    <option value="n/a" selected disabled hidden></option>
+                    <option value=0>No</option>
+                    <option value=1>Yes</option>
+                </select>
+            </span></span><br>
+            <span class="indentedInputsThree">Attorney for which respondent?<span class="inputBox"><input type="text", name="party4_whichRespondent", id="id_party4_whichRespondent", disabled="disabled"></span></span><br>
+            <span class="indentedInputsThree">Firm addressee #4 works with?<span class="inputBox"><input type="text", name="party4_whichFirm", id="id_party4_whichFirm", disabled="disabled"></span></span><br>
+            <span class="indentedInputsTwo">Address line 1<span class="inputBox"><input type="text", name="party4_address1", id="id_party4_address1"></span></span><br>
+            <span class="indentedInputsTwo">Address line 2<span class="inputBox"><input type="text", name="party4_address2", id="id_party4_address2"></span></span><br>
+            <span class="indentedInputsTwo">Address line 3<span class="inputBox"><input type="text", name="party4_address3", id="id_party4_address3"></span></span><br>
+        </span><br>
+    </span>
+
+
+    <div id="buttonVisual">
+        <button onclick="generate()">Generate document(s)</button>
+        <span class="indentedInputs"> <input type="checkbox", checked="checked", id="id_defaultFilename", name="defaultFilename">
+                <label title="Current structure is: Client name Document name", for="id_defaultFilename"> Use default file naming structure? </label>
+        </span><br></br>
+    </div>
+</div>
+
+ 
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.21.1/docxtemplater.js" defer></script>
+<script src="https://unpkg.com/pizzip@3.0.6/dist/pizzip.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js" defer></script>
+<script src="https://unpkg.com/pizzip@3.0.6/dist/pizzip-utils.js" defer></script>
+<script src="js/appealDocs.js"></script>
+
+
+</html>

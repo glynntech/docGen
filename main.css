@@ -1,0 +1,280 @@
+.sidebar {
+    font-family: arial,sans-serif;
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #222;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidebar a {
+    padding: 6px 8px 6px 20px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.logoOrientation {
+    padding: 6px 8px 6px 20px;
+}
+
+
+
+/* main */
+.main {
+    font-family: arial,sans-serif;
+    font-size: 14px;
+    margin-left: 160px; /* Same as the width of the sidenav */
+    /* margin-right: 750px; */
+    max-width: 850px;
+    padding: 10px 10px;
+}
+
+/* admin docs */
+/* section 1 visibility */
+#sOne {
+    display: none;
+}
+
+
+/* section 2 visibility */
+#sTwo {
+    display: none;
+}
+
+
+/* service docs */
+#AcceptanceService {display: none;}
+#AffidavitDefault {display: none;}
+#AffidavitService {display: none;}
+#CertificateService {display: none;}
+
+#service_CoS1 {display: block;}
+#service_CoS2 {display: none;}
+#service_CoS3 {display: none;}
+#service_CoS4 {display: none;}
+
+
+
+/* motion docs */
+#AmendSchOrd_F {display: none;}
+#AmendComp_F {display: none;}
+#CompelDisc_S {display: none;}
+#CompelDisc_F {display: none;}
+#CompelMed_F {display: none;}
+#DefJudg {display: none;}
+#Reconsider_S {display: none;}
+#CertificateService {display: none;}
+
+#motion_asof1 {display: block;}
+#motion_asof2 {display: none;}
+#motion_asof3 {display: none;}
+#motion_asof4 {display: none;}
+
+#motion_CoS1 {display: none;}
+#motion_CoS2 {display: none;}
+#motion_CoS3 {display: none;}
+#motion_CoS4 {display: none;}
+
+
+
+/* discovery docs */
+#req_2601 {display: none;}
+#res_2601 {display: none;}
+#req_2603 {display: none;}
+#res_2603 {display: none;}
+#depoNotice {display: none;}
+
+#deponent1 {display: none;}
+#deponent2 {display: none;}
+#deponent3 {display: none;}
+#deponent4 {display: none;}
+#deponent5 {display: none;}
+#deponent6 {display: none;}
+#deponent7 {display: none;}
+#deponent8 {display: none;}
+#deponent9 {display: none;}
+#deponent10 {display: none;}
+
+#discReq {display: none;}
+#discRes {display: none;}
+#FOIA_req {display: none;}
+
+
+
+/* appeals */
+#courtJudge {display: none;}
+#order {display: none;}
+#proceeding {display: none;}
+#clerk {display: none;}
+#courtReporter {display: none;}
+#partiesMailed {display: none;}
+#appeals_partyMailed1 {display: none;}
+#appeals_partyMailed2 {display: none;}
+#appeals_partyMailed3 {display: none;}
+#appeals_partyMailed4 {display: none;}
+
+
+
+
+/* subpoenas */
+#courtroom {display: none;}
+#docInspection {display: none;}
+#inspectionAddress {display: none;}
+#depoAddress {display: none;}
+#premInspection {display: none;}
+
+#docObj1 {display: none;}
+#docObj2 {display: none;}
+#docObj3 {display: none;}
+#docObj4 {display: none;}
+#docObj5 {display: none;}
+#docObj6 {display: none;}
+#docObj7 {display: none;}
+#docObj8 {display: none;}
+#docObj9 {display: none;}
+#docObj10 {display: none;}
+
+
+
+
+/* button visual */
+#buttonVisual {
+    margin-left: 160px;
+    display: none;
+}
+
+
+/* indented inputs */
+.indentedInputs {
+    margin-left: 30px;
+}
+
+/* indented inputs two */
+.indentedInputsTwo {
+    margin-left: 60px;
+}
+
+/* indented inputs three */
+.indentedInputsThree {
+    margin-left: 90px;
+}
+
+/* input boxes */
+.inputBox {
+    margin-left: 5px;
+}
+
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+
+
+
+  
+  #main-holder {
+    width: 50%;
+    height: 70%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 7px;
+    box-shadow: 0px 0px 5px 2px black;
+  }
+  
+  #login-error-msg-holder {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+  }
+  
+  #login-error-msg {
+    width: 23%;
+    text-align: center;
+    margin: 0;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #8a0000;
+    border: 1px solid #8a0000;
+    background-color: #e58f8f;
+    opacity: 0;
+  }
+  
+  #error-msg-second-line {
+    display: block;
+  }
+  
+  #login-form {
+    align-self: flex-start;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+  }
+  
+  .login-form-field::placeholder {
+    color: #3a3a3a;
+  }
+  
+  .login-form-field {
+    border: none;
+    border-bottom: 1px solid #3a3a3a;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    outline: none;
+    padding: 0px 0px 5px 5px;
+  }
+  
+  #login-form-submit {
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    background-color: #3a3a3a;
+    cursor: pointer;
+    outline: none;
+  }
+
+@media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+}

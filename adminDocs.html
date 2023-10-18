@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://hawkinsandjedziniak.com/wp-content/uploads/2021/05/logo-placeholder.png">
+    <link rel="stylesheet" href="main.css"> 
+	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
+    <title>Admin Docs</title>
+</head>
+
+<body>
+	<noscript>This page requires JavaScript be available and enabled to function properly</noscript>
+	
+	<div class="sidebar">
+		<span class="logoOrientation">
+			<img src="https://hawkinsandjedziniak.com/wp-content/uploads/2021/05/logo-placeholder.png", width="120" height="120">
+		</span><br></br>
+		<a href="home.html">Home</a> <br></br>
+		<a href="adminDocs.html">Administrative</a>
+		<a href="appealDocs.html">Appeals</a>
+		<a href="discoveryDocs.html">Discovery</a>
+		<a href="motionDocs.html">Motions</a>
+		<a href="serviceDocs.html">Service</a>
+		<a href="subpoenaDocs.html">Subpoenas</a> <br></br>
+		<a href="faqs.html">FAQs</a>
+		<a href="contact.html">Contact</a>
+	</div>
+	
+	
+	
+	<div class="main">
+		<h1>Administrative Documents</h1>
+		
+		<label for="documentSelect">Select a document: </label>
+		<span class="inputBox">
+			<select id="id_docSelect", onchange="docSelectChange(this);">
+				<option value=999 selected disabled hidden></option>
+				<optgroup label="Civil Case Documents">
+					<option value=0>New client packet</option>
+					<option value=1>Case checklist</option>
+					<option value=2>Representation agreement</option>
+					<option value=3>Release of counsel</option>
+					<option value=4>Verification</option>
+				</optgroup>
+				<optgroup label="Criminal Case Documents">
+					<option value=5>New client packet</option>
+					<option value=6>Case checklist **not available**</option>
+					<option value=7>Letter of representation</option>
+					<option value=8>Representation agreement</option>
+					<option value=9>Rule 5/Brady</option>
+				</optgroup>
+			</select>
+		</span> <br></br><br>
+		
+		
+		
+		<div id="sOne">
+			<label for="minorCheck">Is the client a minor? </label>
+			<span class="inputBox">
+				<select id="id_minorCheck", onchange="minorCheckChange(this);", disabled="disabled">
+					<option value=0>No</option>
+					<option value=1>Yes</option>
+				</select>
+			</span> <br>
+			
+			<span class="indentedInputs">
+				<label for="minorRelationship">Adult representative(s) relationship to minor? </label>
+					<span class="inputBox">
+						<select name="minorRelationship", id="id_minorRelationship", disabled="disabled">
+							<option value="No">N/a</option>
+						</select>
+					</span>
+			</span> <br></br>
+			
+			<label for="clientNumber", id="levelOne">Number of clients (including minor): </label>
+			<span class="inputBox">
+				<select name="clientNumber", id="id_clientNumber", onchange="clientNumberChange(this);">
+					<option value=1>1</option>
+					<option value=2>2</option>
+					<option value=3>3</option>
+					<option value=4>4</option>
+				</select>
+			</span> <br>
+			
+			
+			<div class="indentedInputs">
+				<form id="frmClientName">
+					Name of client #1/minor:<span class="inputBox"><input type="text", name="clientOneName", id="id_clientOneName"></span><br>
+					Name of client #2:<span class="inputBox"><input type="text", name="clientTwoName", id="id_clientTwoName", disabled="disabled"></span><br>
+					Name of client #3:<span class="inputBox"><input type="text", name="clientThreeName", id="id_clientThreeName", disabled="disabled"></span><br>
+					Name of client #4:<span class="inputBox"><input type="text", name="clientFourName", id="id_clientFourName", disabled="disabled"></span>
+				</form>
+			</div><br>
+			
+			<form id="frmDefendantName">
+				Defendant name(s): <span class="inputBox"><input type="text", name="defendantName", id="id_defendantName", disabled="disabled"></span>
+			</form><br>
+			
+			<label for="contFee">Is there a contingency fee? </label>
+			<span class="inputBox">
+				<select id="id_contFee", onchange="contFeeChange(this);", disabled="disabled">
+					<option value=0>No</option>
+					<option value=1>Yes</option>
+				</select>
+			</span> <br>
+
+			<div class="indentedInputs">
+				<form id="frmContFee">
+					What is the contingency fee? <span class="inputBox"><input type="text", name="contFeeAmount", id="id_contFeeAmount", value="%", disabled="disabled"></span>
+				</form>
+			</div><br>
+			
+			<label for="fixedFee">Is there a fixed fee? </label>
+			<span class="inputBox">
+				<select id="id_fixedFee", onchange="fixedFeeChange(this);", disabled="disabled">
+					<option value=0>No</option>
+					<option value=1>Yes</option>
+				</select>
+			</span>
+			
+			<div class="indentedInputs">
+				<form id="frmFixedFee">
+					What is the fixed fee? <span class="inputBox"><input type="text", name="fixedFeeAmount", id="id_fixedFeeAmount", value="$", disabled="disabled"></span>
+				</form>
+			</div>
+		</div>
+		
+
+
+		<div id="sTwo">
+			<label for="filingCounty">Filing county:</label>
+			<span class="inputBox">
+				<select id="id_filingCounty", disabled="disabled">
+					<option value="n/a" selected disabled hidden></option>
+					<option value="Abbeville">Abbeville</option>
+					<option value="Aiken">Aiken</option>
+					<option value="Allendale">Allendale</option>
+					<option value="Anderson">Anderson</option>
+					<option value="Bamberg">Bamberg</option>
+					<option value="Barnwell">Barnwell</option>
+					<option value="Beaufort">Beaufort</option>
+					<option value="Berkeley">Berkeley</option>
+					<option value="Calhoun">Calhoun</option>
+					<option value="Charleston">Charleston</option>
+					<option value="Cherokee">Cherokee</option>
+					<option value="Chester">Chester</option>
+					<option value="Chesterfield">Chesterfield</option>
+					<option value="Clarendon">Clarendon</option>
+					<option value="Colleton">Colleton</option>
+					<option value="Darlington">Darlington</option>
+					<option value="Dillon">Dillon</option>
+					<option value="Dorchester">Dorchester</option>
+					<option value="Edgefield">Edgefield</option>
+					<option value="Fairfield">Fairfield</option>
+					<option value="Florence">Florence</option>
+					<option value="Georgetown">Georgetown</option>
+					<option value="Greenville">Greenville</option>
+					<option value="Greenwood">Greenwood</option>
+					<option value="Hampton">Hampton</option>
+					<option value="Horry">Horry</option>
+					<option value="Jasper">Jasper</option>
+					<option value="Kershaw">Kershaw</option>
+					<option value="Lancaster">Lancaster</option>
+					<option value="Laurens">Laurens</option>
+					<option value="Lee">Lee</option>
+					<option value="Lexington">Lexington</option>
+					<option value="Marion">Marion</option>
+					<option value="Marlboro">Marlboro</option>
+					<option value="McCormick">McCormick</option>
+					<option value="Newberry">Newberry</option>
+					<option value="Oconee">Oconee</option>
+					<option value="Orangeburg">Orangeburg</option>
+					<option value="Pickens">Pickens</option>
+					<option value="Richland">Richland</option>
+					<option value="Saluda">Saluda</option>
+					<option value="Spartanburg">Spartanburg</option>
+					<option value="Sumter">Sumter</option>
+					<option value="Union">Union</option>
+					<option value="Williamsburg">Williamsburg</option>
+					<option value="York">York</option>
+				</select>
+			</span> <br>
+
+			<label for="filingCourt">Filing court:
+			<span class="inputBox">
+				<select name="filingCourt", id="id_filingCourt", disabled="disabled">
+					<option value="n/a" selected disabled hidden></option>				
+					<option value="In the Court of Common Pleas">In the Court of Common Pleas</option>
+					<option value="In the Court of General Sessions">In the Court of General Sessions</option>
+					<option value="In the Magistrates Court">In the Magistrates Court</option>					
+				</select>
+			</span> <br>
+			
+			<label for="filingDate">Filing date:</label>
+			<span class="inputBox">
+				<input type="date-local", placeholder="mm/dd/yyyy", name="filingDate", id="id_filingDate", size="6", disabled="disabled">
+			</label> <br>
+			</span>
+			
+			<label for="attorneyFiling">Attorney filing:
+			<span class="inputBox">
+				<select name="attorneyFiling", id="id_attorneyFiling", disabled="disabled">
+					<option value="n/a" selected disabled hidden></option>				
+					<option value="Joshua T. Hawkins">Joshua T. Hawkins</option>
+					<option value="Helena L. Jedziniak">Helena L. Jedziniak</option>
+				</select>
+			</span> <br></br>
+		
+			<form id="frmDefendantNameCrim">
+				Defendant name(s): <input type="text", name="defendantNameCrim", id="id_defendantNameCrim">
+			</form><br>
+
+			<label for="ticketWarrantCheck">Ticket or Warrant?
+			<span class="inputBox">
+				<select name="ticketWarrantCheck", id="id_ticketWarrantCheck", onchange="ticketOrWarrantChange(this)", disabled="disabled">
+					<option value="n/a" selected disabled hidden></option>				
+					<option value="ticket">Ticket</option>
+					<option value="warrant">Warrant</option>
+				</select>
+			</span>
+		
+			<div class="indentedInputs">
+				<form id="frmTicketWarrantNumbers">
+					Warrant/ticket number(s)? <input type="text", title="Seperate multiple tickets/warrants with a comma", name="ticketWarrantNumbers", id="id_ticketWarrantNumbers", disabled="disabled">
+				</form>
+			</div><br>
+
+			<form id="frmFixedFeeCrim">
+				Initial fixed fee: <input type="text", name="fixedFeeCrim", id="id_fixedFeeCrim", value="$", disabled="disabled">
+			</form>
+		</div>
+		
+		
+		<br>
+		<div id="buttonVisual">
+			<button onclick="generate()">Generate document(s)</button>
+			<span class="indentedInputs"> <input type="checkbox", checked="checked", id="id_defaultFilename", name="defaultFilename">
+					<label title="Current structure is: Client name Document name", for="id_defaultFilename"> Use default file naming structure? </label>
+			</span>
+		</div>
+	</div>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.21.1/docxtemplater.js" defer></script>
+<script src="https://unpkg.com/pizzip@3.0.6/dist/pizzip.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js" defer></script>
+<script src="https://unpkg.com/pizzip@3.0.6/dist/pizzip-utils.js" defer></script>
+<script src="js/adminDocs.js"></script>
+
+</html>

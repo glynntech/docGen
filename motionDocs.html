@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+    <link rel="icon" href="assets/images/logo.jpg">
+    <link rel="stylesheet" href="main.css"> 
+	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
+    <title>Motion Docs</title>
+</head>
+
+
+<body>
+    <noscript>This page requires JavaScript be available and enabled to function properly</noscript>
+	
+	<div class="sidebar">
+		<span class="logoOrientation">
+			<img src="assets/images/logo.jpg", width="120" height="120">
+		</span><br></br>
+		<a href="home.html">Home</a> <br></br>
+		<a href="adminDocs.html">Administrative</a>
+		<a href="appealDocs.html">Appeals</a>
+		<a href="discoveryDocs.html">Discovery</a>
+		<a href="motionDocs.html">Motions</a>
+		<a href="serviceDocs.html">Service</a>
+		<a href="subpoenaDocs.html">Subpoenas</a> <br></br>
+		<a href="faqs.html">FAQs</a>
+		<a href="contact.html">Contact</a>
+	</div>
+	
+<div class="main">
+    <h1>Motions</h1>
+    
+    <label for="documentSelect">Select a document: </label>
+    <span class="inputBox">
+        <select id="id_docSelect", onchange="primaryChange(this);">
+            <option value="n/a" selected disabled hidden></option>
+                <option value="unspecified">Motion (unspecified)</option>
+                <option value="amendSchOrd">Motion to Amend Scheduling Order</option>
+                <option value="amendComp">Motion to Amend the Complaint</option>
+                <option value="compelDisc">Motion to Compel Discovery</option>
+                <option value="compelMed">Motion to Compel Mediation</option>
+                <option value="defualtJudg">Motion for Default Judgment (w/ Summary Judgment)</option>
+                <option value="reconsider">Motion to Reconsider</option>
+        </select>
+    </span> <br>
+    
+    <span class="indentedInputs">
+        <label for="jurisdiction">Jurisdiction: </label>
+            <span class="inputBox">
+                <select name="jurisdiction", id="id_jurisdiction", onchange="primaryChange(this);">
+                    <option value="n/a" selected disabled hidden></option>
+                        <option value="state">State</option>
+                        <option value="federal">Federal</option>
+                </select>
+            </span>
+    </span> <br>
+    
+    <span class="indentedInputs">
+        <label for="certificateOfService">Include Certificate of Service? </label>
+            <span class="inputBox">
+                <select name="certificateOfService", id="id_certificateOfService", onchange="primaryChange(this);", disabled="disabled">
+                    <option value=0>No</option>
+                    <option value=1>Yes</option>
+                </select>
+            </span>
+    </span> <br>
+
+    </br><br>
+    
+    
+    
+    
+    
+    <!-- header inputs -->
+    <label for="filingCounty">Filing county:</label>
+    <span class="inputBox">
+        <select id="id_filingCounty">
+            <option value="n/a" selected disabled hidden></option>
+            <option value="Abbeville">Abbeville</option>
+            <option value="Aiken">Aiken</option>
+            <option value="Allendale">Allendale</option>
+            <option value="Anderson">Anderson</option>
+            <option value="Bamberg">Bamberg</option>
+            <option value="Barnwell">Barnwell</option>
+            <option value="Beaufort">Beaufort</option>
+            <option value="Berkeley">Berkeley</option>
+            <option value="Calhoun">Calhoun</option>
+            <option value="Charleston">Charleston</option>
+            <option value="Cherokee">Cherokee</option>
+            <option value="Chester">Chester</option>
+            <option value="Chesterfield">Chesterfield</option>
+            <option value="Clarendon">Clarendon</option>
+            <option value="Colleton">Colleton</option>
+            <option value="Darlington">Darlington</option>
+            <option value="Dillon">Dillon</option>
+            <option value="Dorchester">Dorchester</option>
+            <option value="Edgefield">Edgefield</option>
+            <option value="Fairfield">Fairfield</option>
+            <option value="Florence">Florence</option>
+            <option value="Georgetown">Georgetown</option>
+            <option value="Greenville">Greenville</option>
+            <option value="Greenwood">Greenwood</option>
+            <option value="Hampton">Hampton</option>
+            <option value="Horry">Horry</option>
+            <option value="Jasper">Jasper</option>
+            <option value="Kershaw">Kershaw</option>
+            <option value="Lancaster">Lancaster</option>
+            <option value="Laurens">Laurens</option>
+            <option value="Lee">Lee</option>
+            <option value="Lexington">Lexington</option>
+            <option value="Marion">Marion</option>
+            <option value="Marlboro">Marlboro</option>
+            <option value="McCormick">McCormick</option>
+            <option value="Newberry">Newberry</option>
+            <option value="Oconee">Oconee</option>
+            <option value="Orangeburg">Orangeburg</option>
+            <option value="Pickens">Pickens</option>
+            <option value="Richland">Richland</option>
+            <option value="Saluda">Saluda</option>
+            <option value="Spartanburg">Spartanburg</option>
+            <option value="Sumter">Sumter</option>
+            <option value="Union">Union</option>
+            <option value="Williamsburg">Williamsburg</option>
+            <option value="York">York</option>
+        </select>
+    </span> <br>
+
+    <label for="filingCourt">Filing court:</label>
+    <span class="inputBox">
+        <select name="filingCourt", id="id_filingCourt", disabled="disabled">
+            <option value="n/a" selected disabled hidden></option>				
+            <option value="In the Court of Common Pleas">In the Court of Common Pleas</option>
+            <option value="In the Court of General Sessions">In the Court of General Sessions</option>
+            <option value="In the Magistrates Court">In the Magistrates Court</option>					
+        </select>
+    </span> <br>
+    
+    <label for="filingDate">Filing date:</label>
+    <span class="inputBox">
+        <input type="date-local", placeholder="mm/dd/yyyy", name="filingDate", id="id_filingDate", size="6">
+    </span> <br>
+
+    
+    <label for="attorneyFiling">Attorney filing:
+    <span class="inputBox">
+        <select name="attorneyFiling", id="id_attorneyFiling">
+            <option value="n/a" selected disabled hidden></option>				
+            <option value="Joshua T. Hawkins">Joshua T. Hawkins</option>
+            <option value="Helena L. Jedziniak">Helena L. Jedziniak</option>
+            <option value="Ethan L. Jedziniak">Ethan L. Jedziniak</option>
+        </select>
+    </span> <br>
+
+    <form id="frmCaseNumber">
+        Case number: <span class="inputBox"><input type="text", name="caseNumber", id="id_caseNumber"></span>
+    </form><br>
+    
+    <label for="plaintiffName">Plaintiff name(s): </label>
+    <span class="inputBox">
+        <input type="text", name="plaintiffName", id="id_plaintiffName">
+    </span><br>
+
+    <span class="indentedInputs">
+        <label for="plaintiffNumber">Is there more than 1 Plaintiff? </label>
+        <span class="inputBox">
+            <select id="id_plaintiffNumber", onchange="plaintiffNumberChange(this);">
+                <option value=0>No</option>
+                <option value=1>Yes</option>
+            </select>
+        </span> <br>
+    </span>
+
+    <span class="indentedInputs">
+        <label for="plaintiffSex">What is the sex of the Plaintiff? </label>
+        <span class="inputBox">
+            <select id="id_plaintiffSex", title="Only if there is 1 Plaintiff attached">
+                <option value="n/a" selected disabled hidden></option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+                <option value="nonbinary">Non-binary</option>
+            </select>
+        </span>
+    </span> <br>
+    
+    
+    
+    <label for="defendantName">Defendant name(s): </label>
+    <span class="inputBox">
+        <input type="text", name="defendantName", id="id_defendantName">
+    </span><br>
+
+    <span class="indentedInputs">
+        <label for="defendantNumber">Is there more than 1 Defendant? </label>
+        <span class="inputBox">
+            <select id="id_defendantNumber">
+                <option value=0>No</option>
+                <option value=1>Yes</option>
+            </select>
+        </span>
+    </span> <br></br>
+    
+    
+    
+    
+    <div id="AmendSchOrd_F">
+    
+        <label for="asoF_numberAttorneysConsenting">Number of Defendant's Attorneys consenting to motion:</label>
+        <span class="inputBox">
+            <select name="asoF_numberAttorneysConsenting", id="id_asoF_numberAttorneysConsenting", onchange="asoF_numberAttorneysConsentingChange(this);">
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+            </select>
+        </span> <br>
+
+        
+        <span id="motion_asof1">
+            <span class="indentedInputs">
+                <label for="asoF_attorneyConsentingOne_Name">Name of attorney for Defendant #1:</label>
+                <span class="inputBox">
+                    <input type="text", name="asoF_attorneyConsentingOne_Name", id="id_asoF_attorneyConsentingOne_Name">
+                </span>
+            </span> <br>
+            
+                <span class="indentedInputsTwo">
+                    <label for="asoF_attorneyConsentingOne_Bar">Federal bar number:</label>
+                    <span class="inputBox">
+                        <input type="text", name="asoF_attorneyConsentingOne_Bar", id="id_asoF_attorneyConsentingOne_Bar">
+                    </span>
+                </span> <br>
+
+                <span class="indentedInputsTwo">
+                    <label for="asoF_attorneyConsentingOne_Address1">Address line 1:</label>
+                    <span class="inputBox">
+                        <input type="text", name="asoF_attorneyConsentingOne_Address1", id="id_asoF_attorneyConsentingOne_Address1">
+                    </span>
+                </span> <br>
+
+                <span class="indentedInputsTwo">
+                    <label for="asoF_attorneyConsentingOne_Address2">Address line 2:</label>
+                    <span class="inputBox">
+                        <input type="text", name="asoF_attorneyConsentingOne_Address2", id="id_asoF_attorneyConsentingOne_Address2">
+                    </span>
+                </span> <br>
+
+                <span class="indentedInputsTwo">
+                    <label for="asoF_attorneyConsentingOne_Address3">Address line 3:</label>
+                    <span class="inputBox">
+                        <input type="text", name="asoF_attorneyConsentingOne_Address3", id="id_asoF_attorneyConsentingOne_Address3">
+                    </span>
+                </span> <br>
+
+                <span class="indentedInputsTwo">
+                    <label for="asoF_attorneyConsentingOne_Phone">Phone number:</label>
+                    <span class="inputBox">
+                        <input type="text", name="asoF_attorneyConsentingOne_Phone", id="id_asoF_attorneyConsentingOne_Phone">
+                    </span>
+                </span> <br>
+
+                <span class="indentedInputsTwo">
+                    <label for="asoF_attorneyConsentingOne_Fax">Facsimile number:</label>
+                    <span class="inputBox">
+                        <input type="text", name="asoF_attorneyConsentingOne_Fax", id="id_asoF_attorneyConsentingOne_Fax">
+                    </span>
+                </span> <br>
+
+                <span class="indentedInputsTwo">
+                    <label for="asoF_attorneyConsentingOne_Website">Website address:</label>
+                    <span class="inputBox">
+                        <input type="text", name="asoF_attorneyConsentingOne_Website", id="id_asoF_attorneyConsentingOne_Website">
+                    </span>
+                </span> <br>
+        </span>
+
+        <span id="motion_asof2">
+            <span class="indentedInputs">
+                <label for="asoF_attorneyConsentingTwo_Name">Name of attorney for Defendant #2:</label>
+                <span class="inputBox">
+                    <input type="text", name="asoF_attorneyConsentingTwo_Name", id="id_asoF_attorneyConsentingTwo_Name">
+                </span>
+            </span> <br>
+            
+                <span class="indentedInputsTwo">
+                    <label for="asoF_attorneyConsentingTwo_Bar">Federal bar number:</label>
+                    <span class="inputBox">
+                        <input type="text", name="asoF_attorneyConsentingTwo_Bar", id="id_asoF_attorneyConsentingTwo_Bar">
+                    </span>
+                </span> <br>
+
+                <span class="indentedInputsTwo">
+                    <label for="asoF_attorneyConsentingTwo_Address1">Address line 1:</label>
+                    <span class="inputBox">
+                        <input type="text", name="asoF_attorneyConsentingTwo_Address1", id="id_asoF_attorneyConsentingTwo_Address1">
+                    </span>
+                </span> <br>
+
+                <span class="indentedInputsTwo">
+                    <label for="asoF_attorneyConsentingTwo_Address2">Address line 2:</label>
+                    <span class="inputBox">
+                        <input type="text", name="asoF_attorneyConsentingTwo_Address2", id="id_asoF_attorneyConsentingTwo_Address2">
+                    </span>
+                </span> <br>
+
+                <span class="indentedInputsTwo">
+                    <label for="asoF_attorneyConsentingTwo_Address3">Address line 3:</label>
+                    <span class="inputBox">
+                        <input type="text", name="asoF_attorneyConsentingTwo_Address3", id="id_asoF_attorneyConsentingTwo_Address3">
+                    </span>
+                </span> <br>
+
+                <span class="indentedInputsTwo">
+                    <label for="asoF_attorneyConsentingTwo_Phone">Phone number:</label>
+                    <span class="inputBox">
+                        <input type="text", name="asoF_attorneyConsentingTwo_Phone", id="id_asoF_attorneyConsentingTwo_Phone">
+                    </span>
+                </span> <br>
+
+                <span class="indentedInputsTwo">
+                    <label for="asoF_attorneyConsentingTwo_Fax">Facsimile number:</label>
+                    <span class="inputBox">
+                        <input type="text", name="asoF_attorneyConsentingTwo_Fax", id="id_asoF_attorneyConsentingTwo_Fax">
+                    </span>
+                </span> <br>
+
+                <span class="indentedInputsTwo">
+                    <label for="asoF_attorneyConsentingTwo_Website">Website address:</label>
+                    <span class="inputBox">
+                        <input type="text", name="asoF_attorneyConsentingTwo_Website", id="id_asoF_attorneyConsentingTwo_Website">
+                    </span>
+                </span> <br>
+        </span>
+            
+        <span id="motion_asof3">
+            <span class="indentedInputs">
+                <label for="asoF_attorneyConsentingThree_Name">Name of attorney for Defendant #3:</label>
+                <span class="inputBox">
+                    <input type="text", name="asoF_attorneyConsentingThree_Name", id="id_asoF_attorneyConsentingThree_Name">
+                </span>
+            </span> <br>
+            
+                <span class="indentedInputsTwo">
+                    <label for="asoF_attorneyConsentingThree_Bar">Federal bar number:</label>
+                    <span class="inputBox">
+                        <input type="text", name="asoF_attorneyConsentingThree_Bar", id="id_asoF_attorneyConsentingThree_Bar">
+                    </span>
+                </span> <br>
+
+                <span class="indentedInputsTwo">
+                    <label for="asoF_attorneyConsentingThree_Address1">Address line 1:</label>
+                    <span class="inputBox">
+                        <input type="text", name="asoF_attorneyConsentingThree_Address1", id="id_asoF_attorneyConsentingThree_Address1">
+                    </span>
+                </span> <br>
+
+                <span class="indentedInputsTwo">
+                    <label for="asoF_attorneyConsentingThree_Address2">Address line 2:</label>
+                    <span class="inputBox">
+                        <input type="text", name="asoF_attorneyConsentingThree_Address2", id="id_asoF_attorneyConsentingThree_Address2">
+                    </span>
+                </span> <br>
+
+                <span class="indentedInputsTwo">
+                    <label for="asoF_attorneyConsentingThree_Address3">Address line 3:</label>
+                    <span class="inputBox">
+                        <input type="text", name="asoF_attorneyConsentingThree_Address3", id="id_asoF_attorneyConsentingThree_Address3">
+                    </span>
+                </span> <br>
+
+                <span class="indentedInputsTwo">
+                    <label for="asoF_attorneyConsentingThree_Phone">Phone number:</label>
+                    <span class="inputBox">
+                        <input type="text", name="asoF_attorneyConsentingThree_Phone", id="id_asoF_attorneyConsentingThree_Phone">
+                    </span>
+                </span> <br>
+
+                <span class="indentedInputsTwo">
+                    <label for="asoF_attorneyConsentingThree_Fax">Facsimile number:</label>
+                    <span class="inputBox">
+                        <input type="text", name="asoF_attorneyConsentingThree_Fax", id="id_asoF_attorneyConsentingThree_Fax">
+                    </span>
+                </span> <br>
+
+                <span class="indentedInputsTwo">
+                    <label for="asoF_attorneyConsentingThree_Website">Website address:</label>
+                    <span class="inputBox">
+                        <input type="text", name="asoF_attorneyConsentingThree_Website", id="id_asoF_attorneyConsentingThree_Website">
+                    </span>
+                </span> <br>
+        </span>
+            
+
+        <span id="motion_asof4">
+            <span class="indentedInputs">
+                <label for="asoF_attorneyConsentingFour_Name">Name of attorney for Defendant #4:</label>
+                <span class="inputBox">
+                    <input type="text", name="asoF_attorneyConsentingFour_Name", id="id_asoF_attorneyConsentingFour_Name">
+                </span>
+            </span> <br>
+            
+                <span class="indentedInputsTwo">
+                    <label for="asoF_attorneyConsentingFour_Bar">Federal bar number:</label>
+                    <span class="inputBox">
+                        <input type="text", name="asoF_attorneyConsentingFour_Bar", id="id_asoF_attorneyConsentingFour_Bar">
+                    </span>
+                </span> <br>
+
+                <span class="indentedInputsTwo">
+                    <label for="asoF_attorneyConsentingFour_Address1">Address line 1:</label>
+                    <span class="inputBox">
+                        <input type="text", name="asoF_attorneyConsentingFour_Address1", id="id_asoF_attorneyConsentingFour_Address1">
+                    </span>
+                </span> <br>
+
+                <span class="indentedInputsTwo">
+                    <label for="asoF_attorneyConsentingFour_Address2">Address line 2:</label>
+                    <span class="inputBox">
+                        <input type="text", name="asoF_attorneyConsentingFour_Address2", id="id_asoF_attorneyConsentingFour_Address2">
+                    </span>
+                </span> <br>
+
+                <span class="indentedInputsTwo">
+                    <label for="asoF_attorneyConsentingFour_Address3">Address line 3:</label>
+                    <span class="inputBox">
+                        <input type="text", name="asoF_attorneyConsentingFour_Address3", id="id_asoF_attorneyConsentingFour_Address3">
+                    </span>
+                </span> <br>
+
+                <span class="indentedInputsTwo">
+                    <label for="asoF_attorneyConsentingFour_Phone">Phone number:</label>
+                    <span class="inputBox">
+                        <input type="text", name="asoF_attorneyConsentingFour_Phone", id="id_asoF_attorneyConsentingFour_Phone">
+                    </span>
+                </span> <br>
+
+                <span class="indentedInputsTwo">
+                    <label for="asoF_attorneyConsentingFour_Fax">Facsimile number:</label>
+                    <span class="inputBox">
+                        <input type="text", name="asoF_attorneyConsentingFour_Fax", id="id_asoF_attorneyConsentingFour_Fax">
+                    </span>
+                </span> <br>
+
+                <span class="indentedInputsTwo">
+                    <label for="asoF_attorneyConsentingFour_Website">Website address:</label>
+                    <span class="inputBox">
+                        <input type="text", name="asoF_attorneyConsentingFour_Website", id="id_asoF_attorneyConsentingFour_Website">
+                    </span>
+                </span>
+        </span>
+
+    <br></br> </div>
+    
+    
+    
+    <div id="AmendComp_F">
+    
+        <label for="acF_defConsent">Does the defense consent to the amendment?</label>
+        <span class="inputBox">
+            <select id="id_acF_defConsent">
+                <option value=0>No</option>
+                <option value=1>Yes</option>
+            </select>
+        </span> <br>
+        
+        <label for="acF_amendReason">State the reason(s) for amending the complaint: </label>
+        <span class="inputBox">
+            <input type="text", name="acF_amendReason", id="id_acF_amendReason", title="context is: 'the plaintiff respectfully requests leave to amend the complaint to _____________'">
+        </span>
+    
+    <br></br> </div> 
+    
+    
+    
+    <div id="CompelDisc_S">
+    
+        <label for="cdS_discServed">Date discovery was initially served:</label>
+        <span class="inputBox">
+            <input type="date-local", placeholder="mm/dd/yyyy", name="cdS_discServed", id="id_cdS_discServed", size="6">
+        </span>
+    
+    <br></br> </div> 
+    
+    
+    
+    <div id="CompelDisc_F">
+    
+        <label for="cdF_interrogNums">Interrogatory numbers you are compelling: </label>
+        <span class="inputBox">
+            <input type="text", name="cdF_interrogNums", id="id_cdF_interrogNums">
+        </span><br>
+        
+        <label for="cdF_reqProdNums">Request for Production numbers you are compelling: </label>
+        <span class="inputBox">
+            <input type="text", name="cdF_reqProdNums", id="id_cdF_reqProdNums">
+        </span>
+    
+    <br></br> </div>
+    
+    
+    
+    <div id="CompelMed_F">
+    
+        <label for="cmF_judgeName">Name of judge who issued mediation order:</label>
+        <span class="inputBox">
+            <input type="text", name="cmF_judgeName", id="id_cmF_judgeName">
+        </span><br></br>
+        
+        
+        <label for="cmF_prevMedAttempts">Have there been previous attempts to mediate?</label>
+        <span class="inputBox">
+            <select id="id_cmF_prevMedAttempts", onchange="prevMedAttemptChange(this);">
+                <option value=0>No</option>
+                <option value=1>Yes</option>
+            </select>
+        </span> <br>
+        
+        <span class="indentedInputs">
+        <label for="cmF_dateMedAttempted">Date mediation was previously attempted:</label>
+        <span class="inputBox">
+            <input type="date-local", placeholder="mm/dd/yyyy", name="cmF_dateMedAttempted", id="id_cmF_dateMedAttempted", size="6", disabled="disabled">
+        </span></span>
+    
+    <br></br> </div>
+    
+    
+    
+    <div id="DefJudg">
+    
+        <label for="dj_groundForDJ">Grounds for default judgment?</label>
+        <span class="inputBox">
+            <select id="id_dj_groundForDJ">
+                <option value="n/a" selected disabled hidden></option>
+                <option value="noResponse">Defendant has not responded to service within 30 days</option>
+                <option value="other">Other</option>
+            </select>
+        </span> <br>
+        
+        <span class="indentedInputs">
+        <label for="dj_whichDef">Which Defendant(s)?</label>
+        <span class="inputBox">
+            <input type="text", name="dj_whichDef", id="id_dj_whichDef">
+        </span></span> <br></br>
+        
+        <label for="dj_reqAdmissionFiling">What was the filing date on the Requests for Admission?</label>
+        <span class="inputBox">
+            <input type="date-local", placeholder="mm/dd/yyyy", name="dj_reqAdmissionFiling", id="id_dj_reqAdmissionFiling", size="6">
+        </span> <br></br>
+        
+        <label for="dj_affDefault">Produce Affidavit of Default?</label>
+        <span class="inputBox">
+            <select id="id_dj_affDefault", onchange="produceAffDefaultChange(this)">
+                <option value=0>No</option>
+                <option value=1>Yes</option>
+            </select>
+        </span> <br>
+        
+        <span class="indentedInputs">
+        <label for="dj_summonsComplaintFiled">Date summons and complaint were filed:</label>
+        <span class="inputBox">
+            <input type="date-local", placeholder="mm/dd/yyyy", name="dj_summonsComplaintFiled", id="id_dj_summonsComplaintFiled", size="6", disabled="disabled">
+        </span></span> <br>
+        
+        <span class="indentedInputs">
+        <label for="dj_summonsComplaintServed">Date summons and complaint were served:</label>
+        <span class="inputBox">
+            <input type="date-local", placeholder="mm/dd/yyyy", name="dj_summonsComplaintServed", id="id_dj_summonsComplaintServed", size="6", disabled="disabled">
+        </span></span>
+    
+    <br></br> </div>
+    
+    
+    
+    <div id="Reconsider_S">
+    
+        <label for="rS_motionReconsider">Motion type to reconsider:</label>
+        <span class="inputBox">
+            <select id="id_rS_motionReconsider">
+                <option value="n/a" selected disabled hidden></option>
+                    <option value="Motion to Amend Scheduling Order">Motion to Amend Scheduling Order</option>
+                    <option value="Motion to Amend the Complaint">Motion to Amend the Complaint</option>
+                    <option value="Motion to Compel Discovery">Motion to Compel Discovery</option>
+                    <option value="Motion to Compel Mediation">Motion to Compel Mediation</option>
+                    <option value="Motion for Default Judgment">Motion for Default Judgment</option>
+                    <option value="__________">Other</option>
+            </select>
+        </span> <br>
+        
+        <span class="indentedInputs">
+        <label for="rS_dateHearing">Date of heading for motion:</label>
+        <span class="inputBox">
+            <input type="date-local", placeholder="mm/dd/yyyy", name="rS_dateHearing", id="id_rS_dateHearing", size="6">
+        </span></span> <br>
+        
+        <span class="indentedInputs">
+        <label for="rS_dateFormalized">Date order was formalized by the court:</label>
+        <span class="inputBox">
+            <input type="date-local", placeholder="mm/dd/yyyy", name="rS_dateFormalized", id="id_rS_dateFormalized", size="6">
+        </span></span>
+    
+    <br></br> </div>
+    
+    
+    
+    <div id="CertificateService">
+    
+        <label for="numberPartiesMailed">Number of parties being mailed: </label>
+        <span class="inputBox">
+            <select name="numberPartiesMailed", id="id_numberPartiesMailed", onchange="numberPartiesMailedChange(this);">
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+            </select>
+        </span> <br>
+
+        
+        <!-- party #1 block -->
+        <span class="indentedInputs">
+            <label for="mailedPartyOneName">Name of party #1: </label>
+            <span class="inputBox">
+                <input type="text", name="mailedPartyOneName", id="id_mailedPartyOneName">
+            </span>
+        </span> <br>
+        
+            <span class="indentedInputsTwo">
+                <label for="mailedPartyOneAddressOne">Address of party #1 line 1: </label>
+                <span class="inputBox">
+                    <input type="text", name="mailedPartyOneAddressOne", id="id_mailedPartyOneAddressOne">
+                </span>
+            </span> <br>
+
+            <span class="indentedInputsTwo">
+                <label for="mailedPartyOneAddressTwo">Address of party #1 line 2: </label>
+                <span class="inputBox">
+                    <input type="text", name="mailedPartyOneAddressTwo", id="id_mailedPartyOneAddressTwo">
+                </span>
+            </span> <br>
+
+            <span class="indentedInputsTwo">
+                <label for="mailedPartyOneAddressThree">Address of party #1 line 3: </label>
+                <span class="inputBox">
+                    <input type="text", name="mailedPartyOneAddressThree", id="id_mailedPartyOneAddressThree">
+                </span>
+            </span> <br>
+        
+        
+        <!-- party #2 block -->
+        <span id="motion_CoS2">
+            <span class="indentedInputs">
+                <label for="mailedPartyTwoName">Name of party #2: </label>
+                <span class="inputBox">
+                    <input type="text", name="mailedPartyTwoName", id="id_mailedPartyTwoName">
+                </span>
+            </span> <br>
+        
+                <span class="indentedInputsTwo">
+                    <label for="mailedPartyTwoAddressOne">Address of party #2 line 1: </label>
+                    <span class="inputBox">
+                        <input type="text", name="mailedPartyTwoAddressOne", id="id_mailedPartyTwoAddressOne">
+                    </span>
+                </span> <br>
+
+                <span class="indentedInputsTwo">
+                    <label for="mailedPartyTwoAddressTwo">Address of party #2 line 2: </label>
+                    <span class="inputBox">
+                        <input type="text", name="mailedPartyTwoAddressTwo", id="id_mailedPartyTwoAddressTwo">
+                    </span>
+                </span> <br>
+
+                <span class="indentedInputsTwo">
+                    <label for="mailedPartyTwoAddressThree">Address of party #2 line 3: </label>
+                    <span class="inputBox">
+                        <input type="text", name="mailedPartyTwoAddressThree", id="id_mailedPartyTwoAddressThree">
+                    </span>
+                </span> <br>
+        </span>
+
+
+        <!-- party #3 block -->
+        <span id="motion_CoS3">
+            <span class="indentedInputs">
+                <label for="mailedPartyThreeName">Name of party #3: </label>
+                <span class="inputBox">
+                    <input type="text", name="mailedPartyThreeName", id="id_mailedPartyThreeName">
+                </span>
+            </span> <br>
+        
+                <span class="indentedInputsTwo">
+                    <label for="mailedPartyThreeAddressOne">Address of party #3 line 1: </label>
+                    <span class="inputBox">
+                        <input type="text", name="mailedPartyThreeAddressOne", id="id_mailedPartyThreeAddressOne">
+                    </span>
+                </span> <br>
+
+                <span class="indentedInputsTwo">
+                    <label for="mailedPartyThreeAddressTwo">Address of party #3 line 2: </label>
+                    <span class="inputBox">
+                        <input type="text", name="mailedPartyThreeAddressTwo", id="id_mailedPartyThreeAddressTwo">
+                    </span>
+                </span> <br>
+
+                <span class="indentedInputsTwo">
+                    <label for="mailedPartyThreeAddressThree">Address of party #3 line 3: </label>
+                    <span class="inputBox">
+                        <input type="text", name="mailedPartyThreeAddressThree", id="id_mailedPartyThreeAddressThree">
+                    </span>
+                </span> <br>
+        </span>
+
+        <!-- party #4 block -->
+        <span id="motion_CoS4">
+            <span class="indentedInputs">
+                <label for="mailedPartyFourName">Name of party #4: </label>
+                <span class="inputBox">
+                    <input type="text", name="mailedPartyFourName", id="id_mailedPartyFourName">
+                </span>
+            </span> <br>
+        
+                <span class="indentedInputsTwo">
+                    <label for="mailedPartyFourAddressOne">Address of party #4 line 1: </label>
+                    <span class="inputBox">
+                        <input type="text", name="mailedPartyFourAddressOne", id="id_mailedPartyFourAddressOne">
+                    </span>
+                </span> <br>
+
+                <span class="indentedInputsTwo">
+                    <label for="mailedPartyFourAddressTwo">Address of party #4 line 2: </label>
+                    <span class="inputBox">
+                        <input type="text", name="mailedPartyFourAddressTwo", id="id_mailedPartyFourAddressTwo">
+                    </span>
+                </span> <br>
+
+                <span class="indentedInputsTwo">
+                    <label for="mailedPartyFourAddressThree">Address of party #4 line 3: </label>
+                    <span class="inputBox">
+                        <input type="text", name="mailedPartyFourAddressThree", id="id_mailedPartyFourAddressThree">
+                    </span>
+                </span>
+        </span>
+
+    <br></br> </div>
+    
+    
+    <div id="buttonVisual">
+        <button onclick="generate()">Generate document(s)</button>
+        <span class="indentedInputs"> <input type="checkbox", checked="checked", id="id_defaultFilename", name="defaultFilename">
+                <label title="Current structure is: Client name Document name", for="id_defaultFilename"> Use default file naming structure? </label>
+        </span>
+    </div>
+</div>
+
+ 
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.21.1/docxtemplater.js" defer></script>
+<script src="https://unpkg.com/pizzip@3.0.6/dist/pizzip.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js" defer></script>
+<script src="https://unpkg.com/pizzip@3.0.6/dist/pizzip-utils.js" defer></script>
+<script src="js/motionDocs.js"></script>
+
+
+</html>
