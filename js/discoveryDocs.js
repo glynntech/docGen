@@ -449,35 +449,35 @@ function generate() {
 	var docNameFull;
 
     if (docTypeSelect == "2601_req"){
-    	templateFile = "https://hawkinsandjedziniak.com/docs/discovery/26.01request.docx";
+    	templateFile = "https://github.com/glynntech/docGen/tree/main/docs/discovery/26.01request.docx";
 		docNameFull = "26.01 Request";
 
     } else if (docTypeSelect == "2601_res"){
-    	templateFile = "https://hawkinsandjedziniak.com/docs/discovery/26.01response.docx";
+    	templateFile = "https://github.com/glynntech/docGen/tree/main/docs/discovery/26.01response.docx";
 		docNameFull = "26.01 Response";
 
     } else if (docTypeSelect == "2603_req"){
-    	templateFile = "https://hawkinsandjedziniak.com/docs/discovery/26.03request.docx";
+    	templateFile = "https://github.com/glynntech/docGen/tree/main/docs/discovery/26.03request.docx";
 		docNameFull = "26.03 Request";
 
     } else if (docTypeSelect == "2603_res"){
-    	templateFile = "https://hawkinsandjedziniak.com/docs/discovery/26.03response.docx";
+    	templateFile = "https://github.com/glynntech/docGen/tree/main/docs/discovery/26.03response.docx";
 		docNameFull = "26.03 Response";
 
     } else if (docTypeSelect == "depoNotice"){
-    	templateFile = "https://hawkinsandjedziniak.com/docs/discovery/depositionNotice_" + jurisdiction + ".docx";
+    	templateFile = "https://github.com/glynntech/docGen/tree/main/docs/discovery/depositionNotice_" + jurisdiction + ".docx";
 		docNameFull = "Deposition Notice";
 
     } else if (docTypeSelect == "discReq"){
-    	templateFile = "https://hawkinsandjedziniak.com/docs/discovery/indivRequest_" + jurisdiction + ".docx";
+    	templateFile = "https://github.com/glynntech/docGen/tree/main/docs/discovery/indivRequest_" + jurisdiction + ".docx";
 		docNameFull = "Discovery Request";
 
 	} else if (docTypeSelect == "discRes"){
-    	templateFile = "https://hawkinsandjedziniak.com/docs/discovery/depositionResponse_" + jurisdiction + ".docx";
+    	templateFile = "https://github.com/glynntech/docGen/tree/main/docs/discovery/depositionResponse_" + jurisdiction + ".docx";
 		docNameFull = "Discovery Response";
 
     } else if (docTypeSelect == "FOIA_req"){
-    	templateFile = "https://hawkinsandjedziniak.com/docs/discovery/FOIARequest_" + jurisdiction + ".docx";
+    	templateFile = "https://github.com/glynntech/docGen/tree/main/docs/discovery/FOIARequest_" + jurisdiction + ".docx";
 		docNameFull = "FOIA Request";
     }
 	
